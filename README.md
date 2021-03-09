@@ -37,7 +37,7 @@ importance cannot be overstated. Your finances are now tied to these credentials
 wrong hands, an AWS account can accrue charges rapidly, even with a daily budget. Consider 
 using a password manager such as [LastPass](https://www.lastpass.com/) or 
 [1Password](https://1password.com/landing/password-manager/), services whose yearly costs 
-mirror the cost of one hour of the [most expensive EC2 instance](https://instances.vantage.sh/?selected=p4d.24xlarge). 
+mirror the cost of one hour of the [most expensive EC2 instances](https://instances.vantage.sh/). 
 Pay for basic password management to avoid paying for someone else's use of your account.**
 4. Choose **Personal**.
 5. Enter your personal information.
@@ -56,6 +56,7 @@ register.
 3. Sign in as the **Root user**.
 4. [Set up a virtual Multi-factor Authentication device for your AWS account root user.
    ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-root)
+   **Setting up multi-factor authentication is another vital step to secure your account.**
 5. Navigate to **IAM** with the search bar at the top of the screen.
 6. Choose **Users** on the left navigation menu.
 7. Select **Add user**.
