@@ -23,12 +23,12 @@ with Java, .NET, PHP, Node.js, Python, Ruby, or Go.
 
 ### AWS Account
 Working with AWS Elastic Beanstalk requires an AWS account. Fortunately, as of March 
-2021, Amazon still offers an extended free-tier account that gives free access for one 
+2021 Amazon still offers an extended free-tier account that gives free access for one 
 year to all the services you will need to deploy your application with Elastic Beanstalk. 
 Even still, note that setting up an AWS account requires an active credit or debit card, 
 which will be billed if your usage exceeds the free tier limit. These instructions will 
 teach you how to set up daily billing alerts as an additional tool to prevent excessive unwanted 
-charges.
+charges. Prioritize security.
 
 #### Creating and Activating Your Account
 1. Open the [Amazon Web Services home page](https://aws.amazon.com/).
@@ -61,7 +61,7 @@ register.
 3. Sign in as the **Root user**.
 4. [Set up a virtual Multi-factor Authentication device for your AWS account root user.
    ](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html#enable-virt-mfa-for-root)
-   **Setting up multi-factor authentication is another vital step to secure your account.**
+   **Setting up multi-factor authentication is another vital step toward securing your account.**
 5. Navigate to **IAM** with the search bar at the top of the screen.
 6. Choose **Users** on the left navigation menu.
 7. Select **Add user**.
