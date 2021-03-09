@@ -10,7 +10,7 @@ and [Google Cloud Platform](https://cloud.google.com).
 
 ## Why Deploy on AWS?
 Your ability to display your capstone running on AWS servers will signal to employers your 
-ability to work on a modern software development team, many of which are now responsible 
+ability to work in a modern software development team, many of which are now responsible 
 for the deployment, monitoring, and maintenance of their software stack in the cloud.
 
 ## AWS Elastic Beanstalk
