@@ -32,6 +32,13 @@ to prevent unwanted charges.
 2. Choose **Create an AWS Account**.
 3. Enter your account information. [Choose a strong password](https://www.lastpass.com/password-generator), 
    document the information securely, and then choose **Continue**.
+**You will notice that this document repeatedly mentions securing your credentials. The 
+importance cannot be overstated. Your finances are now tied to these credentials. In the 
+wrong hands, an AWS account can accrue charges rapidly, even with a daily budget. Consider 
+using a password manager such as [LastPass](https://www.lastpass.com/) or 
+[1Password](https://1password.com/landing/password-manager/), services whose yearly costs 
+mirror the cost of one hour of the [most expensive EC2 instance](https://instances.vantage.sh/?selected=p4d.24xlarge). 
+Pay for basic password management to avoid paying for someone else's use of your account.**
 4. Choose **Personal**.
 5. Enter your personal information.
 6. Enter your billing information.
@@ -72,15 +79,6 @@ register.
 3. Select **Activate IAM Access** and **Update**.
 4. Document all credentials securely: root user email address; root user password; IAM 
    username; IAM password, and account number. 
-   
-**Store this information in the securest manner possible. You will notice that this document 
-repeatedly mentions securing your credentials. The importance cannot be overstated. Your 
-finances are now tied to these credentials. In the wrong hands, an AWS account can accrue 
-charges rapidly, even with a daily budget. Consider using a password manager such as 
-[LastPass](https://www.lastpass.com/) or [1Password](https://1password.com/landing/password-manager/), 
-services whose yearly costs mirror the cost of one hour of the most expensive EC2 instance. 
-Pay for basic password management to avoid paying for someone else's use of your account.**
-
 5. **Sign out** of the Root account through the account dropdown menu in the top right 
    corner of the screen. It is widely considered bad practice to perform tasks with the root 
    user. The root user should only be used to create the first IAM administrative user, to open 
