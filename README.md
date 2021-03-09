@@ -35,13 +35,15 @@ charges.
 2. Choose **Create an AWS Account**.
 3. Enter your account information. [Choose a strong password](https://www.lastpass.com/password-generator), 
    document the information securely, and then choose **Continue**.
-**_You will notice that this document repeatedly mentions securing your credentials. The 
+   
+**You will notice that this document repeatedly mentions securing your credentials. The 
 importance of this cannot be overstated. Your finances are now tied to these credentials. In the 
 wrong hands, an AWS account can accrue charges rapidly, even with a daily budget. Consider 
 using a password manager such as [LastPass](https://www.lastpass.com/) or 
 [1Password](https://1password.com/landing/password-manager/), services whose yearly costs 
 mirror the cost of one hour of the [most expensive EC2 instances](https://instances.vantage.sh/). 
-Pay for basic password management to avoid paying for someone else's use of your account._**
+Pay for basic password management to avoid paying for someone else's use of your account.**
+
 4. Choose **Personal**.
 5. Enter your personal information.
 6. Enter your billing information.
