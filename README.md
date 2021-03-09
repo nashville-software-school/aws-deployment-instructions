@@ -1,14 +1,15 @@
 # Deploying Your Capstone with Amazon Web Services Elastic Beanstalk
 
 ## Amazon Web Services (AWS)
-AWS, a subsidiary of Amazon, is the leading provider of on-demand cloud computing 
-platforms and APIs. According to 
+[AWS](https://aws.amazon.com), a subsidiary of Amazon, is the leading provider of 
+on-demand cloud computing platforms and APIs. According to 
 [Canalys](https://www.canalys.com/newsroom/global-cloud-market-q4-2020), AWS owns 
 around one third of the cloud computing market and has reported revenue of $12.7 billion 
 for Q4 2020. Its competitors include [Microsoft Azure](https://azure.microsoft.com/en-us/free/) 
 and [Google Cloud Platform](https://cloud.google.com).
 
-Your ability to display your capstone on AWS servers will signal to employers your 
+## Why Deploy on AWS?
+Your ability to display your capstone running on AWS servers will signal to employers your 
 ability to work on a modern software development team, many of which are now responsible 
 for the deployment, monitoring, and maintenance of their software stack in the cloud.
 
@@ -22,12 +23,12 @@ with Java, .NET, PHP, Node.js, Python, Ruby, or Go.
 
 ### AWS Account
 Working with AWS Elastic Beanstalk requires an AWS account. Fortunately, as of March 
-2021 this remains free. Amazon offers an extended free-tier account that gives free 
-access for one year to all the services you will need to deploy your application with 
-Elastic Beanstalk. Even still, note that setting up an AWS account requires an active 
-credit card, which will be billed if your usage exceeds the free tier limit. These 
-instructions will teach you how to set up daily billing alerts as an additional tool 
-to prevent unwanted charges.
+2021, Amazon still offers an extended free-tier account that gives free access for one 
+year to all the services you will need to deploy your application with Elastic Beanstalk. 
+Even still, note that setting up an AWS account requires an active credit or debit card, 
+which will be billed if your usage exceeds the free tier limit. These instructions will 
+teach you how to set up daily billing alerts as an additional tool to prevent excessive unwanted 
+charges.
 
 #### Creating and Activating Your Account
 1. Open the [Amazon Web Services home page](https://aws.amazon.com/).
@@ -35,7 +36,7 @@ to prevent unwanted charges.
 3. Enter your account information. [Choose a strong password](https://www.lastpass.com/password-generator), 
    document the information securely, and then choose **Continue**.
 **You will notice that this document repeatedly mentions securing your credentials. The 
-importance cannot be overstated. Your finances are now tied to these credentials. In the 
+importance of this cannot be overstated. Your finances are now tied to these credentials. In the 
 wrong hands, an AWS account can accrue charges rapidly, even with a daily budget. Consider 
 using a password manager such as [LastPass](https://www.lastpass.com/) or 
 [1Password](https://1password.com/landing/password-manager/), services whose yearly costs 
