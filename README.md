@@ -5,10 +5,12 @@ AWS, a subsidiary of Amazon, is the leading provider of on-demand cloud computin
 platforms and APIs. According to 
 [Canalys](https://www.canalys.com/newsroom/global-cloud-market-q4-2020), AWS owns 
 around one third of the cloud computing market and has reported revenue of $12.7 billion 
-for Q4 2020. Your ability to display your capstone on AWS servers will signal to 
-employers you ability to work on a modern software development team, many of which are 
-now responsible for the deployment, monitoring, and maintenance of their software 
-stack in the cloud.
+for Q4 2020. Its competitors include [Microsoft Azure](https://azure.microsoft.com/en-us/free/) 
+and [Google Cloud Platform](https://cloud.google.com).
+
+Your ability to display your capstone on AWS servers will signal to employers your 
+ability to work on a modern software development team, many of which are now responsible 
+for the deployment, monitoring, and maintenance of their software stack in the cloud.
 
 ## AWS Elastic Beanstalk
 AWS developed Elastic Beanstalk to facilitate the deployment of web applications with 
