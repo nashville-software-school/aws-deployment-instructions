@@ -1,4 +1,4 @@
-# Deploying Your Capstone with Amazon Web Services Elastic Beanstalk
+# Deploying Your Capstone with Amazon Web Services
 
 ## Amazon Web Services (AWS)
 [AWS](https://aws.amazon.com), a subsidiary of Amazon, is the leading provider of 
@@ -12,6 +12,8 @@ and [Google Cloud Platform](https://cloud.google.com).
 Your ability to display your capstone running on AWS servers will signal to employers your 
 ability to work in a modern software development team, many of which are now responsible 
 for the deployment, monitoring, and maintenance of their software stack in the cloud.
+
+## AWS Amplify
 
 ## AWS Elastic Beanstalk
 AWS developed Elastic Beanstalk to facilitate the deployment of web applications with 
