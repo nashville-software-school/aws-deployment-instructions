@@ -25,7 +25,7 @@ with Java, .NET, PHP, Node.js, Python, Ruby, or Go.
 ## Getting Started
 
 ### AWS Account
-Working with AWS Elastic Beanstalk requires an AWS account. Fortunately, as of March 
+Working with AWS Amplify and Elastic Beanstalk requires an AWS account. Fortunately, as of March 
 2021 Amazon still offers an extended free-tier account that gives free access for one 
 year to all the services you will need to deploy your application with Elastic Beanstalk. 
 Even still, note that setting up an AWS account requires an active credit or debit card, 
