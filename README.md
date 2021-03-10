@@ -44,7 +44,8 @@ wrong hands, an AWS account can accrue charges rapidly, even with a daily budget
 tracking. Consider using a password manager such as [LastPass](https://www.lastpass.com/) or 
 [1Password](https://1password.com/landing/password-manager/), services whose yearly costs 
 mirror the cost of one hour of the [most expensive EC2 instances](https://instances.vantage.sh/). 
-Pay for basic password management to avoid paying for someone else's use of your account.**
+Pay for basic password management to avoid paying for someone else's unauthorized use of your 
+account.**
 
 4. Choose **Personal**.
 5. Enter your personal information.
