@@ -27,13 +27,12 @@ with Java, .NET, PHP, Node.js, Python, Ruby, or Go.
 ### AWS Account
 Working with AWS Amplify and Elastic Beanstalk requires an AWS account. Fortunately, as of March 
 2021 Amazon still offers an extended free-tier account that gives free access for one 
-year to all the services you will need to deploy your application with Elastic Beanstalk. 
-Even still, note that setting up an AWS account requires an active credit or debit card, 
-which will be billed if your usage exceeds the free tier limit. These instructions will 
-teach you how to set up daily billing alerts as an additional tool to prevent excessive unwanted 
-charges. Moreover, AWS automatically tracks your service usage and will alert you if you have 
-reached 85% of the usage limit for one or more AWS Free Tier-eligible services. Nonetheless, 
-**prioritize security** to protect your assets.
+year to all the services you will need to deploy your application. Even still, note that setting 
+up an AWS account requires an active credit or debit card, which will be billed if your usage exceeds 
+the free tier limit. These instructions will teach you how to set up daily billing alerts as an additional 
+tool to prevent excessive unwanted charges. Moreover, AWS automatically tracks your service usage and will 
+alert you if you have reached 85% of the usage limit for one or more AWS Free Tier-eligible services. 
+Nonetheless, **prioritize security** to protect your assets.
 
 #### Creating and Activating Your Account
 1. Open the [Amazon Web Services home page](https://aws.amazon.com/).
