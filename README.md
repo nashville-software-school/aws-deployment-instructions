@@ -14,7 +14,6 @@ ability to work in a modern software development team, many of which are now res
 for the deployment, monitoring, and maintenance of their software stack in the cloud.
 
 ## AWS Amplify
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
 
 ## AWS Elastic Beanstalk
 AWS developed Elastic Beanstalk to facilitate the deployment of web applications with 
@@ -112,11 +111,15 @@ register.
 2. **Sign out** of your AWS account through the account dropdown menu in the top 
     right corner of the screen.
 
+##### Congratulations! You are now ready to deploy your application with AWS.
+
+## Deploying Your React Application on AWS Amplify
+
+## Deploying Your Django Application on AWS Elastic Beanstalk
+
 ### Installing the Elastic Beanstalk CLI
 While it is possible to deploy an application through the AWS Elastic Beanstalk Console, you will find 
 working with the CLI to be more efficient. You can find installation instructions 
 [here](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-advanced.html). Note 
 that the CLI requires Python 2.7, 3.4 or later. Since Python 2 has reached its 
 [end of life](https://www.python.org/doc/sunset-python-2/), you should be working in Python 3.
-
-##### Congratulations! You are now ready to deploy your application with AWS.
