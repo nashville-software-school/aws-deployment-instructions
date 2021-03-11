@@ -145,7 +145,9 @@ You can find a video guide for installing the CLI [here](https://www.youtube.com
 
 ### AWS Amplify Tutorial
 Before working to deploy your application, it is worth working through a [tutorial](https://docs.amplify.aws/start/q/integration/react) to orient yourself to the
-Amplify tools and to make sure you have configured it correctly. It should take no more than an hour.
+Amplify tools and to make sure you have configured it correctly. It should take no more than an hour, which is 
+less time than it will take you to learn the service while fighting to deploy your application with 
+misconfigurations.
 
 ### Configuring Your Web Application for Deployment on Amplify
 
