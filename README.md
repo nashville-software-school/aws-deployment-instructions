@@ -137,6 +137,7 @@ sign in to the AWS Console in order to create a new IAM user, or you can use the
 administrative user you created above. Either way, you will need the user's `accessKeyId` and 
 `secretAccessKey` to connect the CLI. If you no longer have access to those credentials, 
 you can [create new keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+**Store these credentials securely.**
 
 ### Configuring Your Web Application for Deployment on Amplify
 
