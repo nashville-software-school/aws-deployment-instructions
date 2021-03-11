@@ -112,11 +112,11 @@ AWS Amplify is a managed service that makes it easy to launch applications in AW
 
 ### Installing and Configuring the Amplify CLI
 
-#####Install the CLI Globally
+##### Install the CLI Globally
 
 ```npm install -g @aws-amplify/cli```
 
-#####Configure the CLI
+##### Configure the CLI
 
 ```amplify configure```
 
