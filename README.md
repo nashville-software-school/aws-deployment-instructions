@@ -143,7 +143,12 @@ You should be able to find them there. As always, if you create new keys, **stor
 
 You can find a video guide for installing the CLI [here](https://www.youtube.com/watch?v=fWbM5DLh25U&t=1s).
 
+### AWS Amplify Tutorial
+Before working to deploy your application, it is worth working through a [tutorial](https://docs.amplify.aws/start/q/integration/react) to orient yourself to the
+Amplify tools and to make sure you have configured it correctly. It should take no more than an hour.
+
 ### Configuring Your Web Application for Deployment on Amplify
+
 
 ## Deploying Your Django Application on AWS Elastic Beanstalk
 
