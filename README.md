@@ -1,4 +1,4 @@
-# Deploying Your Capstone with Amazon Web Services
+# Deploying Your Capstones with Amazon Web Services
 
 ## Amazon Web Services (AWS)
 [AWS](https://aws.amazon.com), a subsidiary of Amazon, is the leading provider of 
@@ -9,17 +9,9 @@ for Q4 2020. Its competitors include [Microsoft Azure](https://azure.microsoft.c
 and [Google Cloud Platform](https://cloud.google.com).
 
 ## Why Deploy on AWS?
-Your ability to display your capstone running on AWS servers will signal to employers your 
+Your ability to display your capstones running on AWS servers will signal to employers your 
 ability to work in a modern software development team, many of which are now responsible 
 for the deployment, monitoring, and maintenance of their software stack in the cloud.
-
-## AWS Amplify
-
-## AWS Elastic Beanstalk
-AWS developed Elastic Beanstalk to facilitate the deployment of web applications with 
-AWS managed services. It orchestrates the provisioning and monitoring of the 
-infrastructure necessary to manage a scalable and secure web application developed 
-with Java, .NET, PHP, Node.js, Python, Ruby, or Go.
 
 ## Getting Started
 
@@ -115,7 +107,17 @@ register.
 
 ## Deploying Your React Application on AWS Amplify
 
+### AWS Amplify
+
+### Installing the Amplify CLI
+
 ## Deploying Your Django Application on AWS Elastic Beanstalk
+
+### AWS Elastic Beanstalk
+AWS developed Elastic Beanstalk to facilitate the deployment of web applications with 
+AWS managed services. It orchestrates the provisioning and monitoring of the 
+infrastructure necessary to manage a scalable and secure web application developed 
+with Java, .NET, PHP, Node.js, Python, Ruby, or Go.
 
 ### Installing the Elastic Beanstalk CLI
 While it is possible to deploy an application through the AWS Elastic Beanstalk Console, you will find 
