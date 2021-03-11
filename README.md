@@ -108,7 +108,11 @@ register.
 ## Deploying Your React Application on AWS Amplify
 
 ### AWS Amplify
-AWS Amplify is a managed service that makes it easy to launch applications in AWS. It has code libraries, components, and a dedicated CLI that you can use to build a backend. The components include data storage, analytics, push notifications, and authentication. Amplify supports iOS, Android, Web and React Native mobile applications in addition to React, Ionic, and vue.js web applications.
+AWS Amplify is a managed service that makes it easy to launch applications in AWS. It has 
+code libraries, components, and a dedicated CLI that you can use to build a backend. The 
+components include data storage, analytics, push notifications, and authentication. Amplify 
+supports iOS, Android, Web and React Native mobile applications in addition to React, Ionic, 
+and vue.js web applications.
 
 ### Installing and Configuring the Amplify CLI
 
@@ -116,9 +120,23 @@ AWS Amplify is a managed service that makes it easy to launch applications in AW
 
 ```npm install -g @aws-amplify/cli```
 
+Depending on your system policies, this command may require `sudo` access.
+
 ##### Configure the CLI
 
 ```amplify configure```
+
+Select `us-east-1` as your region. The reason for this is two-fold. First, it is best practice
+to deploy your application closest to its user base. Amazon's `us-east-1` region is based in 
+northern Virginia. The proximity argument may lead to your wanting to select `us-east-2`, which is 
+in Ohio. Nonetheless, you should still choose `us-east-1` because this is the region in which
+AWS often deploys its newest services first.
+
+After selecting the region, the prompt will ask you for a user name for a new IAM user. You can 
+sign in to the AWS Console in order to create a new IAM user, or you can use the existing 
+administrative user you created above. Either way, you will need the user's `accessKeyId` and 
+`secretAccessKey` to connect the CLI. If you no longer have access to those credentials, 
+you can [create new keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
 
 ### Configuring Your Web Application for Deployment on Amplify
 
