@@ -130,7 +130,8 @@ Select `us-east-1` as your region. The reason for this is two-fold. First, it is
 to deploy your application closest to its user base. Amazon's `us-east-1` region is based in 
 northern Virginia. The proximity argument may lead to your wanting to select `us-east-2`, which is 
 in Ohio. Nonetheless, you should still choose `us-east-1` because this is the region in which
-AWS often deploys its newest services first.
+AWS often deploys its newest services first. The benefit of having access to the newest services
+far outweighs the cost of a few hundred miles.
 
 After selecting the region, the prompt will ask you for a user name for a new IAM user. You can 
 sign in to the AWS Console in order to create a new IAM user, or you can use the existing 
