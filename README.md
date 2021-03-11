@@ -119,4 +119,4 @@ working with the CLI to be more efficient. You can find installation instruction
 that the CLI requires Python 2.7, 3.4 or later. Since Python 2 has reached its 
 [end of life](https://www.python.org/doc/sunset-python-2/), you should be working in Python 3.
 
-##### Congratulations! You are now ready to deploy your application with AWS Elastic Beanstalk.
+##### Congratulations! You are now ready to deploy your application with AWS.
