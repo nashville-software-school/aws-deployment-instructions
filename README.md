@@ -108,8 +108,19 @@ register.
 ## Deploying Your React Application on AWS Amplify
 
 ### AWS Amplify
+AWS Amplify is a managed service that makes it easy to launch applications in AWS. It has code libraries, components, and a dedicated CLI that you can use to build a backend. The components include data storage, analytics, push notifications, and authentication. Amplify supports iOS, Android, Web and React Native mobile applications in addition to React, Ionic, and vue.js web applications.
 
-### Installing the Amplify CLI
+### Installing and Configuring the Amplify CLI
+
+#####Install the CLI Globally
+
+```npm install -g @aws-amplify/cli```
+
+#####Configure the CLI
+
+```amplify configure```
+
+### Configuring Your Web Application for Deployment on Amplify
 
 ## Deploying Your Django Application on AWS Elastic Beanstalk
 
