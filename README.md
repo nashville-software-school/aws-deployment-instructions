@@ -16,12 +16,12 @@ for the deployment, monitoring, and maintenance of their software stack in the c
 ## Getting Started
 
 ### AWS Account
-Working with AWS Amplify and Elastic Beanstalk requires an AWS account. Fortunately, as of March 
-2021 Amazon still offers an extended free-tier account that gives free access for one 
-year to all the services you will need to deploy your application. Even still, note that setting 
-up an AWS account requires an active credit or debit card, which will be billed if your usage exceeds 
-the free tier limit. These instructions will teach you how to set up daily billing alerts as an additional 
-tool to prevent excessive unwanted charges. Moreover, AWS automatically tracks your service usage and will 
+Working with AWS requires an AWS account. Fortunately, as of March 2021 Amazon still offers 
+an extended free-tier account that gives free access for one year to all the services you 
+will need to deploy your application. Even still, note that setting up an AWS account requires 
+an active credit or debit card, which will be billed if your usage exceeds the free tier limit. 
+These instructions will teach you how to set up daily billing alerts as an additional tool to 
+prevent excessive unwanted charges. Moreover, AWS automatically tracks your service usage and will 
 alert you if you have reached 85% of the usage limit for one or more AWS Free Tier-eligible services. 
 Nonetheless, **prioritize security** to protect your assets.
 
@@ -105,6 +105,36 @@ register.
 
 ##### Congratulations! You are now ready to deploy your application with AWS.
 
+## Deploying Your Applications on AWS Elastic Beanstalk
+
+### AWS Elastic Beanstalk
+AWS developed Elastic Beanstalk to facilitate the deployment of web applications with 
+AWS managed services. It orchestrates the provisioning and monitoring of the 
+infrastructure necessary to manage a scalable and secure web application developed 
+with Java, .NET, PHP, Node.js, Python, Ruby, or Go.
+
+### Installing the Elastic Beanstalk CLI
+While it is possible to deploy an application through the AWS Elastic Beanstalk Console, you will find 
+working with the CLI to be more efficient. You can find installation instructions 
+[here](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-advanced.html). Note 
+that the CLI requires Python 2.7, 3.4 or later. Since Python 2 has reached its 
+[end of life](https://www.python.org/doc/sunset-python-2/), you should be working in Python 3.
+
+### AWS Elastic Beanstalk Tutorial
+Before working to deploy your application, it is worth completing a [tutorial](https://dev.to/johanrin/i-deployed-a-server-side-react-app-with-aws-elastic-beanstalk-here-s-what-i-learned-217i) to orient yourself 
+to the Elastic Beanstalk tools and to make sure you have configured them correctly. It should 
+take no more than an hour, which is less time than it will take you to learn the service while 
+fighting to deploy your application with misconfigurations. 
+
+### Deploying Your React Application on AWS Elastic Beanstalk
+1. Ensure that your application works with `npm`. The Elastic Beanstalk Node.js platform uses `npm` as a package manager by 
+default. If you have used `yarn` to build your application, you can remove the `node_modules` folder and `yarn.lock` file 
+and then reinstall the dependencies with `npm install`.
+2. Ensure that your application runs locally after the changes. It is easier to debug errors on your local machine
+than it is to dig through AWS logs. Fix errors as necessary before trying to deploy your project.
+3.  
+
+
 ## Deploying Your React Application on AWS Amplify
 
 ### AWS Amplify
@@ -144,25 +174,10 @@ You should be able to find them there. As always, if you create new keys, **stor
 You can find a video guide for installing the CLI [here](https://www.youtube.com/watch?v=fWbM5DLh25U&t=1s).
 
 ### AWS Amplify Tutorial
-Before working to deploy your application, it is worth working through a [tutorial](https://docs.amplify.aws/start/q/integration/react) to orient yourself to the
-Amplify tools and to make sure you have configured it correctly. It should take no more than an hour, which is 
+Before working to deploy your application, it is worth completing a [tutorial](https://docs.amplify.aws/start/q/integration/react) to orient yourself to the
+Amplify tools and to make sure you have configured them correctly. It should take no more than an hour, which is 
 less time than it will take you to learn the service while fighting to deploy your application with 
 misconfigurations.
 
 ### Configuring Your Web Application for Deployment on Amplify
 
-
-## Deploying Your Django Application on AWS Elastic Beanstalk
-
-### AWS Elastic Beanstalk
-AWS developed Elastic Beanstalk to facilitate the deployment of web applications with 
-AWS managed services. It orchestrates the provisioning and monitoring of the 
-infrastructure necessary to manage a scalable and secure web application developed 
-with Java, .NET, PHP, Node.js, Python, Ruby, or Go.
-
-### Installing the Elastic Beanstalk CLI
-While it is possible to deploy an application through the AWS Elastic Beanstalk Console, you will find 
-working with the CLI to be more efficient. You can find installation instructions 
-[here](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-advanced.html). Note 
-that the CLI requires Python 2.7, 3.4 or later. Since Python 2 has reached its 
-[end of life](https://www.python.org/doc/sunset-python-2/), you should be working in Python 3.
