@@ -112,7 +112,7 @@ register.
 
 ##### Congratulations! You are now ready to deploy your application with AWS.
 
-## Deploying Your Applications on AWS Elastic Beanstalk
+## Deploying Your Applications with AWS Elastic Beanstalk
 
 ### AWS Elastic Beanstalk
 AWS developed Elastic Beanstalk to facilitate the deployment of web applications with 
@@ -126,6 +126,8 @@ working with the CLI to be more efficient. You can find installation instruction
 [here](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb-cli3-install-advanced.html). Note 
 that the CLI requires Python 2.7, 3.4 or later. Since Python 2 has reached its 
 [end of life](https://www.python.org/doc/sunset-python-2/), you should be working in Python 3.
+
+### Deploying Your React Application with AWS Elastic Beanstalk
 
 ### AWS Elastic Beanstalk Tutorial
 Before working to deploy your application, it is worth completing a [tutorial](https://dev.to/johanrin/i-deployed-a-server-side-react-app-with-aws-elastic-beanstalk-here-s-what-i-learned-217i) to orient yourself 
@@ -144,8 +146,8 @@ to deploy your project.
 Many NSS frontend capstones use json-server to mock backend responses. Deploying an application to the web with such a setup
 presents a **significant security risk**. In short, it allows unknown users to access and/or manipulate your data. The 
 intent of these instructions for deploying your frontend application is to acclimate you to working with AWS. It is **not** 
-to teach you how to deploy a frontend application with proper security protocols. **It is essential that you follow the security 
-group instructions below to limit ingress to your application to your computer's IP on your home network. Failing to do so 
+to teach you how to deploy a frontend application with proper security protocols. **It is essential that you follow [the security 
+group instructions below](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#update-your-application-load-balancers-security-group) to limit ingress to your application to your computer's IP on your home network. Failing to do so 
 represents significant risk to your users and your AWS account, which - as noted above - is tied to your finances.**
 
 ### Setting Up a React Application with a JSON Server
@@ -257,17 +259,18 @@ From your application's home directory, run ```eb create```. This will generate 
 you are deploying a light application on the free tier, you do not need to worry about this configuration option.
 
 From this point, the service will complete the following steps:
-1. Package and deploy your application to S3.
-2. Upload your ssh keypair to EC2 if you attached one to the environment in the steps above.
+1. Package and deploy your application to [S3](https://aws.amazon.com/s3/).
+2. Upload your [ssh keypair](https://www.ssh.com/ssh/public-key-authentication) to [EC2](https://aws.amazon.com/ec2/) if you attached one to the environment in the steps above.
 3. Create a [target group](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html).
 4. Create [security groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html).
-5. Create an auto-scaling launch configuration and auto scaling group.
+5. Create an [auto-scaling](https://aws.amazon.com/autoscaling/) launch configuration and auto scaling group.
 6. Create an EC2 instance.
 7. Create auto scaling group policies for scaling your application's resources up and down.
-8. Create two CloudWatch alarms to support auto scaling.
-9. Create a load balancer and load balancer listener.
+8. Create two [CloudWatch](https://aws.amazon.com/cloudwatch/) alarms to support auto scaling.
+9. Create an [application load balancer and load balancer listener](https://aws.amazon.com/elasticloadbalancing/).
 10. Deploy your application to your EC2 instance.
-11. Print the DNS canonical name of your Elastic Beanstalk environment, which will follow the pattern <DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com.
+11. Print the [DNS canonical name](https://en.wikipedia.org/wiki/CNAME_record) of your Elastic Beanstalk environment, 
+which will follow the pattern <DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com.
 
 ### Update Your Application Code 
 You will need to replace all calls to `localhost:<port>` with `<elastic_beanstalk_environment_DNS_CNAME>/api`. Note the following example:
@@ -290,6 +293,8 @@ eb deploy --staged
 
 Elastic Beanstalk only updates from the `HEAD` commit of the `main` Git branch. Deploying with the `--staged` flag pulls all the changes you have staged for
 pushing to your `main` branch. This way you can confirm that your application works before committing the changes to the `main` branch.
+
+##### Congratulations! You have now deployed your React application with AWS Elastic Beanstalk.
 
 ### Update Your Application Load Balancer's Security Group
 **IMPORTANT**: Without this step, your application's data will be exposed to the world. Take this step seriously, and complete it from your home router.
