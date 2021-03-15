@@ -244,12 +244,13 @@ far outweighs the cost of a few hundred miles.
 5. Choose the version of Node you used locally to develop your project.
 6. Select `n` for [CodeCommit](https://aws.amazon.com/codecommit/). You do not need an AWS-managed service for 
 code source and version control.
-8. Set up SSH access for your EC2 instances if you would like.
+8. Set up SSH access for your EC2 instances if you would like:
    * Select a keypair.
    * Name the keypair.
    * Enter a passphrase.
-   * The public key will be saved locally to `/Users/<user>/.ssh/<keypair_name>
-   * Enter your passphrase to upload the public key to AWS.
+   * The public key will be saved locally to `/Users/<user>/.ssh/<keypair_name>`.
+   * Enter your passphrase to upload the public key to AWS. **Store this passphrase securely**. You will need it each time 
+     you use the keypair.
 
 ### Creating Your Elastic Beanstalk Application
 From your application's home directory, run ```eb create```. This will generate a new Elastic Beanstalk environment and deploy your application to it.
