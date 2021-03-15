@@ -135,11 +135,11 @@ to deploy your project.
 
 ### A Note About Using json-server
 Many NSS frontend capstones use json-server to mock backend responses. Deploying an application to the web with such a setup
-presents a significant security risk. In short, it allows unknown users to access and/or manipulate your data. Note that the 
+presents a **significant security risk**. In short, it allows unknown users to access and/or manipulate your data. The 
 intent of these instructions for deploying your frontend application is to acclimate you to working with AWS. It is **not** 
 to teach you how to deploy a frontend application with proper security protocols. **It is essential that you follow the security 
 group instructions below to limit ingress to your application to your computer's IP on your home network. Failing to do so 
-represents significant risk to your users and your AWS account, which is tied to your finances.**
+represents significant risk to your users and your AWS account, which - as noted above - is tied to your finances.**
 
 ### Setting Up a React Application with a JSON Server
 Deploying a React application with a JSON server on Elastic Beanstalk will require you to make a few small changes to your
@@ -218,6 +218,29 @@ export default data;
 ##### Congratulations! You application is now configured for development and production deployment.
 
 ### Initializing Elastic Beanstalk
+From your application's home directory, run ```eb init```. This sets default values for Elastic Beanstalk 
+applications. It will ask a series of questions:
+
+1. Select `us-east-1` as your region. The reason for this is two-fold. First, it is best practice
+to deploy your application closest to its user base. Amazon's `us-east-1` region is based in 
+northern Virginia. The proximity argument may lead to your wanting to select `us-east-2`, which is 
+in Ohio. Nonetheless, you should still choose `us-east-1` because this is the region in which
+AWS often deploys its newest services first. The benefit of having access to the newest services
+far outweighs the cost of a few hundred miles.
+2. Choose `[ Create new Application ]`. It will default to the the name of your application's main folder.
+3. Allow the default value for `Application Name`.
+4. The prompt will ask you whether you are using Node.js. Enter `Y`.
+5. Choose the version of Node you used locally to develop your project.
+6. Select `n` for CodeCommit.
+7. Set up SSH access for your EC2 instances if you would like.
+   * Select a keypair.
+   * Name the keypair.
+   * Enter a passphrase.
+   * The public key will be saved locally to `/Users/<user>/.ssh/<keypair_name>
+   * Enter your passphrase to upload the public key to AWS.
+
+### Creating Your Elastic Beanstalk Application
+
 
 
 ## Deploying Your React Application on AWS Amplify
