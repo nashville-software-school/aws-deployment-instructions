@@ -1,6 +1,6 @@
 # Deploying Your Capstones with Amazon Web Services
 
-Table of Contents
+## Table of Contents
 1. [Amazon Web Services](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#amazon-web-services-aws)
 2. [Why Deploy on AWS?](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#why-deploy-on-aws)
 3. [Getting Started](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#getting-started)
