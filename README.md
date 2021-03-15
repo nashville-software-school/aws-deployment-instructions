@@ -147,8 +147,53 @@ capstone code base. Fortunately, [Andy Collins](https://github.com/askingalot) h
 incorporate your project to get it up and running in the cloud. The source code is [here](https://github.com/nss-day-cohort-29/c29-heroku-test). 
 Following is an abstraction to facilitate your deployment:
 
-1. `package.json`
-Make sure your application includes `concurrently` and `json-server` in its `package.json` file.
+#### `package.json`
+1. Make sure your application includes `concurrently` and `json-server` in its `package.json` file.
+2. Alter your `scripts` block to include the following:
+
+``` 
+    "scripts": {
+    "start": "npm run build && npm run json-serve",
+    "json-serve": "node server.js",
+    "start:dev": "concurrently \"npm run json-serve\" \"react-scripts start\"",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  } 
+```
+
+#### `server.js`
+1. Create a `server.js` file in your application's main directory. Configure it as follows:
+
+```
+const path = require('path');
+const dbPath = './API/db.json';
+const jsonServer = require('json-server');
+const server = jsonServer.create();
+const router = jsonServer.router(dbPath);
+const middlewares = jsonServer.defaults({ static: "./build" });
+const port = process.env.PORT || 5002;
+
+server.use(middlewares);
+
+server.use((req, res, next) => {
+    const isApiRoute = req.originalUrl.includes('/api/');
+    if (isApiRoute) {
+        return next();
+    }
+    return res.sendFile(path.join(__dirname, './build/index.html'));
+});
+
+server.use(jsonServer.rewriter({
+    '/api/*': '/$1'
+}));
+
+server.use(router);
+
+server.listen(port, () => {
+    console.log(`app running on port ${port}`);
+});
+```
 
 
 ## Deploying Your React Application on AWS Amplify
