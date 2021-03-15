@@ -255,7 +255,7 @@ code source and version control.
 From your application's home directory, run ```eb create```. This will generate a new Elastic Beanstalk environment and deploy your application to it.
 
 1. Choose an environment name or allow the default value.
-2. Enter a value for the prefix of your application's DNS canonical name or allow the default value.
+2. Enter a value for the prefix of your application's [DNS Canonical Name record](https://en.wikipedia.org/wiki/CNAME_record) or allow the default value.
 3. Select an `application` load balancer.
 4. Choose `n` for [Spot Fleet requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html). Since
 you are deploying a light application on the free tier, you do not need to worry about this configuration option.
@@ -271,7 +271,7 @@ From this point, the service will complete the following steps:
 8. Create two [CloudWatch](https://aws.amazon.com/cloudwatch/) alarms to support auto scaling.
 9. Create an [application load balancer and load balancer listener](https://aws.amazon.com/elasticloadbalancing/).
 10. Deploy your application to your EC2 instance.
-11. Print the [DNS canonical name](https://en.wikipedia.org/wiki/CNAME_record) of your Elastic Beanstalk environment, 
+11. Print the DNS CNAME of your Elastic Beanstalk environment, 
 which will follow the pattern <DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com.
 
 ### Update Your Application Code 
@@ -293,8 +293,9 @@ git commit -m "<your detailed commit message>"
 eb deploy --staged
 ```
 
-Elastic Beanstalk only updates from the `HEAD` commit of the `main` Git branch. Deploying with the `--staged` flag pulls all the changes you have staged for
-pushing to your `main` branch. This way you can confirm that your application works before committing the changes to the `main` branch.
+Elastic Beanstalk only updates from the `HEAD` commit of the `main` or `master` Git branch. Deploying with the `--staged` 
+flag pulls all the changes you have staged for pushing to your `main` branch. This way you can confirm that your application 
+works before committing the changes to the `main` branch.
 
 ##### Congratulations! You have now deployed your React application with AWS Elastic Beanstalk.
 
