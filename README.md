@@ -195,6 +195,30 @@ server.listen(port, () => {
 });
 ```
 
+#### `API/db.json`
+1. Create a folder titled `API` under your application's main directory.
+2. Place your `db.json` file under that directory.
+
+#### `/src/data.js`
+Create a `data.js` file under your application's source directory and configure it as follows:
+
+```
+const baseUrl = process.env.NODE_ENV === 'production'
+  ? '/api/'
+  : "http://localhost:5002/api/";
+
+const data = {
+  getPosts: () => 
+    fetch(`${baseUrl}posts`).then(resp => resp.json())
+};
+
+export default data;
+```
+
+##### Congratulations! You application is now configured for development and production deployment.
+
+### Initializing Elastic Beanstalk
+
 
 ## Deploying Your React Application on AWS Amplify
 
