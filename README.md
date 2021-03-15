@@ -127,8 +127,8 @@ take no more than an hour, which is less time than it will take you to learn the
 fighting to deploy your application with misconfigurations. 
 
 ### Deployment Prerequisites
-Ensure that your application works with `npm`. The Elastic Beanstalk Node.js platform uses `npm` as a package manager by 
-default. If you have used `yarn` to build your application, you can remove the `node_modules` folder and `yarn.lock` file 
+Make certain that your application works with `npm`. The Elastic Beanstalk Node.js platform uses `npm` as a package manager 
+by default. If you have used `yarn` to build your application, you can remove the `node_modules` folder and `yarn.lock` file 
 and then reinstall the dependencies with `npm install`. Ensure that your application runs locally after the changes. It 
 is easier to debug errors on your local machine than it is to dig through AWS logs. Fix errors as necessary before trying 
 to deploy your project.
@@ -136,13 +136,19 @@ to deploy your project.
 ### A Note About Using json-server
 Many NSS frontend capstones use json-server to mock backend responses. Deploying an application to the web with such a setup
 presents a significant security risk. In short, it allows unknown users to access and/or manipulate your data. Note that the 
-intent of these frontend instructions is to acclimate you to working with AWS. It is **not** to teach you how to deploy a 
-frontend application with proper security protocols. **It is essential that you follow the security group instructions below
-to limit ingress to your application to your computer's IP on your home network. Failing to do so represents significant risk 
-to your users and your AWS account.**
+intent of these instructions for deploying your frontend application is to acclimate you to working with AWS. It is **not** 
+to teach you how to deploy a frontend application with proper security protocols. **It is essential that you follow the security 
+group instructions below to limit ingress to your application to your computer's IP on your home network. Failing to do so 
+represents significant risk to your users and your AWS account, which is tied to your finances.**
 
-### Setting Up a React/json-server Application
+### Setting Up a React Application with a JSON Server
+Deploying a React application with a JSON server on Elastic Beanstalk will require you to make a few small changes to your
+capstone code base. Fortunately, [Andy Collins](https://github.com/askingalot) has written a simple JSON server that you can 
+incorporate your project to get it up and running in the cloud. The source code is [here](https://github.com/nss-day-cohort-29/c29-heroku-test). 
+Following is an abstraction to facilitate your deployment:
 
+1. `package.json`
+Make sure your application includes `concurrently` and `json-server` in its `package.json` file.
 
 
 ## Deploying Your React Application on AWS Amplify
@@ -184,10 +190,9 @@ You should be able to find them there. As always, if you create new keys, **stor
 You can find a video guide for installing the CLI [here](https://www.youtube.com/watch?v=fWbM5DLh25U&t=1s).
 
 ### AWS Amplify Tutorial
-Before working to deploy your application, it is worth completing a [tutorial](https://docs.amplify.aws/start/q/integration/react) to orient yourself to the
-Amplify tools and to make sure you have configured them correctly. It should take no more than an hour, which is 
-less time than it will take you to learn the service while fighting to deploy your application with 
-misconfigurations.
+Before working to deploy your application, it is worth completing a [tutorial](https://docs.amplify.aws/start/q/integration/react) to 
+orient yourself to the Amplify tools and to make sure you have configured them correctly. It should take no more than an hour, which is 
+less time than it will take you to learn the service while fighting to deploy your application with 1misconfigurations.
 
 ### Configuring Your Web Application for Deployment on Amplify
 
