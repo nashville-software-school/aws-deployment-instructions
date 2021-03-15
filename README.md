@@ -248,8 +248,66 @@ code source and version control.
    * Enter your passphrase to upload the public key to AWS.
 
 ### Creating Your Elastic Beanstalk Application
+From your application's home directory, run ```eb create```. This will generate a new Elastic Beanstalk environment and deploy your application to it.
 
+1. Choose an environment name or allow the default value.
+2. Enter a value for the prefix of your application's DNS canonical name or allow the default value.
+3. Select an `application` load balancer.
+4. Choose `n` for [Spot Fleet requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html). Since
+you are deploying a light application on the free tier, you do not need to worry about this configuration option.
 
+From this point, the service will complete the following steps:
+1. Package and deploy your application to S3.
+2. Upload your ssh keypair to EC2 if you attached one to the environment in the steps above.
+3. Create a [target group](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html).
+4. Create [security groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html).
+5. Create an auto-scaling launch configuration and auto scaling group.
+6. Create an EC2 instance.
+7. Create auto scaling group policies for scaling your application's resources up and down.
+8. Create two CloudWatch alarms to support auto scaling.
+9. Create a load balancer and load balancer listener.
+10. Deploy your application to your EC2 instance.
+11. Print the DNS canonical name of your Elastic Beanstalk environment, which will follow the pattern <DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com.
+
+### Update Your Application Code 
+You will need to replace all calls to `localhost:<port>` with `<elastic_beanstalk_environment_DNS_CNAME>/api`. Note the following example:
+
+##### Original
+```
+return fetch(`http://localhost:5000/users?email=${email.current.value}`)
+```
+##### Adapted
+```
+return fetch(`http://eb_react_app.us-east-1.elasticbeanstalk.com/api/users?email=${email.current.value}`)
+```
+
+Deploy your changes as follows:
+```
+git add .
+git commit -m "<your detailed commit message>"
+eb deploy --staged
+```
+
+Elastic Beanstalk only updates from the `HEAD` commit of the `main` Git branch. Deploying with the `--staged` flag pulls all the changes you have staged for
+pushing to your `main` branch. This way you can confirm that your application works before committing the changes to the `main` branch.
+
+### Update Your Application Load Balancer's Security Group
+**IMPORTANT**: Without this step, your application's data will be exposed to the world. Take this step seriously, and complete it from your home router.
+
+1. Log in to the [AWS Management Console](https://console.aws.amazon.com/).
+2. Go to the EC2 service. You can search for it in the search bar at the top or use the dropdown `Services` menu to 
+locate it.
+3. In the left navigation bar, select `Security Groups`.
+4. Find the Security Group with the name of your Elastic Beanstalk Application and the following description:
+```
+Elastic Beanstalk created security group used when no ELB security groups are specified during ELB creation
+```
+5. Click on its `Security group ID`.
+6. Select `Edit inbound rules`.
+7. Under `Source` close the box with the entry `0.0.0.0/0`.
+8. In the dropdown menu that has `Custom`, select `My IP`.
+9. Select `Save rules`.
+10. Your application is now restricted to your home network on the computer with which you changed the security group.
 
 ## Deploying Your React Application on AWS Amplify
 
@@ -272,14 +330,9 @@ Depending on your system policies, this command may require `sudo` access.
 
 ```amplify configure```
 
-Select `us-east-1` as your region. The reason for this is two-fold. First, it is best practice
-to deploy your application closest to its user base. Amazon's `us-east-1` region is based in 
-northern Virginia. The proximity argument may lead to your wanting to select `us-east-2`, which is 
-in Ohio. Nonetheless, you should still choose `us-east-1` because this is the region in which
-AWS often deploys its newest services first. The benefit of having access to the newest services
-far outweighs the cost of a few hundred miles.
+1. Select `us-east-1` as your region. 
 
-After selecting the region, the prompt will ask you for a user name for a new IAM user. You can 
+2. After selecting the region, the prompt will ask you for a user name for a new IAM user. You can 
 sign in to the AWS Console in order to create a new IAM user, or you can use the existing 
 administrative user you created above. Either way, you will need the user's `accessKeyId` and 
 `secretAccessKey` to connect the CLI. If you no longer have access to those credentials, 
