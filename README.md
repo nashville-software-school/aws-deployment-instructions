@@ -1,6 +1,6 @@
 # Deploying Your Capstones with Amazon Web Services
 
-## Table of Contents
+### Table of Contents
 1. [Amazon Web Services](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#amazon-web-services-aws)
 2. [Why Deploy on AWS?](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#why-deploy-on-aws)
 3. [Getting Started](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#getting-started)
@@ -238,8 +238,9 @@ far outweighs the cost of a few hundred miles.
 3. Allow the default value for `Application Name`.
 4. The prompt will ask you whether you are using Node.js. Enter `Y`.
 5. Choose the version of Node you used locally to develop your project.
-6. Select `n` for CodeCommit.
-7. Set up SSH access for your EC2 instances if you would like.
+6. Select `n` for [CodeCommit](https://aws.amazon.com/codecommit/). You do not need an AWS-managed service for 
+code source and version control.
+8. Set up SSH access for your EC2 instances if you would like.
    * Select a keypair.
    * Name the keypair.
    * Enter a passphrase.
