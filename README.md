@@ -126,13 +126,23 @@ to the Elastic Beanstalk tools and to make sure you have configured them correct
 take no more than an hour, which is less time than it will take you to learn the service while 
 fighting to deploy your application with misconfigurations. 
 
-### Deploying Your React Application on AWS Elastic Beanstalk
-1. Ensure that your application works with `npm`. The Elastic Beanstalk Node.js platform uses `npm` as a package manager by 
+### Deployment Prerequisites
+Ensure that your application works with `npm`. The Elastic Beanstalk Node.js platform uses `npm` as a package manager by 
 default. If you have used `yarn` to build your application, you can remove the `node_modules` folder and `yarn.lock` file 
-and then reinstall the dependencies with `npm install`.
-2. Ensure that your application runs locally after the changes. It is easier to debug errors on your local machine
-than it is to dig through AWS logs. Fix errors as necessary before trying to deploy your project.
-3.  
+and then reinstall the dependencies with `npm install`. Ensure that your application runs locally after the changes. It 
+is easier to debug errors on your local machine than it is to dig through AWS logs. Fix errors as necessary before trying 
+to deploy your project.
+
+### A Note About Using json-server
+Many NSS frontend capstones use json-server to mock backend responses. Deploying an application to the web with such a setup
+presents a significant security risk. In short, it allows unknown users to access and/or manipulate your data. Note that the 
+intent of these frontend instructions is to acclimate you to working with AWS. It is **not** to teach you how to deploy a 
+frontend application with proper security protocols. **It is essential that you follow the security group instructions below
+to limit ingress to your application to your computer's IP on your home network. Failing to do so represents significant risk 
+to your users and your AWS account.**
+
+### Setting Up a React/json-server Application
+
 
 
 ## Deploying Your React Application on AWS Amplify
