@@ -1,5 +1,9 @@
 # Deploying Your Capstones with Amazon Web Services
 
+Table of Contents
+[Amazon Web Services](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#amazon-web-services-aws)
+[Why Deploy on AWS?](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#why-deploy-on-aws)
+
 ## Amazon Web Services (AWS)
 [AWS](https://aws.amazon.com), a subsidiary of Amazon, is the leading provider of 
 on-demand cloud computing platforms and APIs. According to 
