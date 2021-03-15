@@ -5,8 +5,8 @@
 2. [Why Deploy on AWS?](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#why-deploy-on-aws)
 3. [Getting Started](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#getting-started)
 4. [Deploying Your Applications with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-applications-with-aws-elastic-beanstalk)
-* [React](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-with-aws-elastic-beanstalk)
-* [React and Django]()
+   * [React](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-with-aws-elastic-beanstalk)
+   * [React and Django]()
 6. [Deploying Your React Application on AWS Amplify](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-on-aws-amplify)
 
 ## Amazon Web Services (AWS)
