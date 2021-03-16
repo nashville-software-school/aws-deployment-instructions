@@ -112,7 +112,7 @@ register.
 2. **Sign out** of your AWS account through the account dropdown menu in the top 
     right corner of the screen.
 
-##### Congratulations! You are now ready to deploy your application with AWS.
+**Congratulations! You are now ready to deploy your application with AWS.**
 
 ## AWS Elastic Beanstalk and the AWS Elastic Beanstalk CLI
 
@@ -129,12 +129,14 @@ working with the CLI to be more efficient. You can find installation instruction
 that the CLI requires Python 2.7, 3.4 or later. Since Python 2 has reached its 
 [end of life](https://www.python.org/doc/sunset-python-2/), you should be working in Python 3.
 
+Review the Elastic Beanstalk Command Line reference material [here](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/eb3-cmd-commands.html).
+
 ## Deploying Your React Application with AWS Elastic Beanstalk
 
 ### AWS Elastic Beanstalk React Tutorial
 Before working to deploy your application, it is worth completing a [tutorial](https://dev.to/johanrin/i-deployed-a-server-side-react-app-with-aws-elastic-beanstalk-here-s-what-i-learned-217i) to orient yourself 
-to the Elastic Beanstalk tools and to make sure you have configured them correctly. It should 
-take no more than an hour, which is less time than it will take you to learn the service while 
+to the Elastic Beanstalk tools and to make sure you have configured them correctly on your machine. It 
+should take no more than an hour, which is less time than it will take you to learn the service while 
 fighting to deploy your application with misconfigurations. 
 
 ### React Deployment Prerequisites
@@ -237,25 +239,25 @@ const data = {
 export default data;
 ```
 
-##### Congratulations! You application is now configured for development and production deployment.
+**Congratulations! You application is now configured for development and production deployment.**
 
 ### Initializing Elastic Beanstalk
 From your application's home directory, run ```eb init```. This sets default values for Elastic Beanstalk 
 applications. It will ask a series of questions:
 
-1. Select `us-east-1` as your region. The reason for this is two-fold. First, it is best practice
-to deploy your application closest to its user base. Amazon's `us-east-1` region is based in 
-northern Virginia. The proximity argument may lead to your wanting to select `us-east-2`, which is 
-in Ohio. Nonetheless, you should still choose `us-east-1` because this is the region in which
+1. Select **us-east-1** as your region. The reason for this is two-fold. First, it is best practice
+to deploy your application closest to its user base. Amazon's us-east-1 region is based in 
+northern Virginia. The proximity argument may lead to your wanting to select us-east-2, which is 
+in Ohio. Nonetheless, you should still choose us-east-1 because this is the region in which
 AWS often deploys its newest services first. The benefit of having access to the newest services
 far outweighs the cost of a few hundred miles.
-2. Choose `[ Create new Application ]`. It will default to the the name of your application's main folder.
+2. Choose **[ Create new Application ]**. It will default to the the name of your application's main folder.
 3. Allow the default value for `Application Name`.
-4. The prompt will ask you whether you are using Node.js. Enter `Y`.
+4. The prompt will ask you whether you are using Node.js. Enter **Y**.
 5. Choose the version of Node you used locally to develop your project.
-6. Select `n` for [CodeCommit](https://aws.amazon.com/codecommit/). You do not need an AWS-managed service for 
-code source and version control.
-8. Set up SSH access for your EC2 instances if you would like:
+6. Select **n** for [CodeCommit](https://aws.amazon.com/codecommit/). You do not need an AWS-managed service for 
+source control.
+7. Set up SSH access for your EC2 instances if you would like:
    * Select a keypair.
    * Name the keypair.
    * Enter a passphrase.
@@ -268,8 +270,9 @@ From your application's home directory, run ```eb create```. This will generate 
 
 1. Choose an environment name or allow the default value.
 2. Enter a value for the prefix of your application's [DNS Canonical Name record](https://en.wikipedia.org/wiki/CNAME_record) or allow the default value.
-3. Select an `application` load balancer.
-4. Choose `n` for [Spot Fleet requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html). Since
+3. Select an **application** load balancer. AWS is in the process of deprecating Classic load balancers. Network load balancers cost money, and
+you do not need their low level configuration options to deploy your capstone.
+5. Choose **n** for [Spot Fleet requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html). Since
 you are deploying a light application on the free tier, you do not need to worry about this configuration option.
 
 From this point, the service will complete the following steps:
@@ -283,8 +286,8 @@ From this point, the service will complete the following steps:
 8. Create two [CloudWatch](https://aws.amazon.com/cloudwatch/) alarms to support auto scaling.
 9. Create an [application load balancer and load balancer listener](https://aws.amazon.com/elasticloadbalancing/).
 10. Deploy your application to your EC2 instance.
-11. Print the DNS CNAME of your Elastic Beanstalk environment, 
-which will follow the pattern <DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com.
+11. Print the DNS CNAME of your Elastic Beanstalk environment, which will follow the pattern 
+<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com.
 
 ### Update Your Application Code 
 You will need to replace all calls to `localhost:<port>` with `<elastic_beanstalk_environment_DNS_CNAME>/api`. Note the following example:
@@ -309,10 +312,11 @@ Elastic Beanstalk only updates from the `HEAD` commit of the `main` or `master` 
 flag pulls all the changes you have staged for pushing to your `main` branch. This way you can confirm that your application 
 works before committing the changes to the `main` branch.
 
-##### Congratulations! You have now deployed your React application with AWS Elastic Beanstalk.
+**Congratulations! You have now deployed your React application with AWS Elastic Beanstalk.**
 
 ### Update Your Application Load Balancer's Security Group
-**IMPORTANT**: Without this step, your application's data will be exposed to the world. Take this step seriously, and complete it from your home router.
+**IMPORTANT**: Without this step, your application's data will be exposed to the world. Take this step seriously, and complete it from your own 
+computer on your home router.
 
 1. Log in to the [AWS Management Console](https://console.aws.amazon.com/).
 2. Go to the EC2 service. You can search for it in the search bar at the top or use the dropdown `Services` menu to 
@@ -328,6 +332,16 @@ Elastic Beanstalk created security group used when no ELB security groups are sp
 8. In the dropdown menu that has `Custom`, select `My IP`.
 9. Select `Save rules`.
 10. Your application is now restricted to your home network on the computer with which you changed the security group.
+
+### Reviewing the Health, Status, and Configuration of Your Elastic Beanstalk Environment
+To check the health of your Elastic Beanstalk environment, you can run `eb status` from the command line.
+
+To review other facts about your environment, you can access the Elastic Beanstalk console via the **Search Bar** or 
+**Services** menu in the AWS Console. The logs functionality is especially helpful for debuggin. To access your environment 
+logs, go to the Elastic Beanstalk console. Select Environments on the left navigation menu. Select your environment. In the 
+navigation pane, choose **Request Logs**. When Elastic Beanstalk finishes processing the logs, choose **Download**.
+
+## Deploying Your Django and React Application on AWS Elastic Beanstalk
 
 ## Deploying Your React Application on AWS Amplify
 
