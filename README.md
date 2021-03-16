@@ -345,9 +345,9 @@ logs, choose **Download**.
 
 ## Deploying Your Django Application with AWS Elastic Beanstalk
 
-Before trying to deploy your Django application with AWS Elastic Beanstalk, it is worth working through a [tutorial]
-(https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html). It should take no more than an 
-hour and will save you much time when working to deploy your own application.
+Before trying to deploy your Django application with AWS Elastic Beanstalk, it is worth working through a 
+[tutorial](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html). 
+It should take no more than an hour and will save you much time when working to deploy your own application.
 
 **Before proceeding, make sure your Django application runs without a hitch on your local machine. You do not want to 
 debug your application remotely.**
