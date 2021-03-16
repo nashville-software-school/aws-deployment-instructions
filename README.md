@@ -131,13 +131,13 @@ that the CLI requires Python 2.7, 3.4 or later. Since Python 2 has reached its
 
 ## Deploying Your React Application with AWS Elastic Beanstalk
 
-### AWS Elastic Beanstalk Tutorial
+### AWS Elastic Beanstalk React Tutorial
 Before working to deploy your application, it is worth completing a [tutorial](https://dev.to/johanrin/i-deployed-a-server-side-react-app-with-aws-elastic-beanstalk-here-s-what-i-learned-217i) to orient yourself 
 to the Elastic Beanstalk tools and to make sure you have configured them correctly. It should 
 take no more than an hour, which is less time than it will take you to learn the service while 
 fighting to deploy your application with misconfigurations. 
 
-### Deployment Prerequisites
+### React Deployment Prerequisites
 Make certain that your application works with `npm`. The Elastic Beanstalk Node.js platform uses `npm` as a package manager 
 by default. If you have used `yarn` to build your application, you can remove the `node_modules` folder and `yarn.lock` file 
 and then reinstall the dependencies with `npm install`. Ensure that your application runs locally after the changes. It 
