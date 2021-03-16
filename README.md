@@ -159,7 +159,18 @@ incorporate your project to get it up and running in the cloud. The source code 
 Following is an abstraction to facilitate your deployment:
 
 #### `package.json`
-1. Make sure your application includes `concurrently` and `json-server` in its `package.json` file.
+1. Make sure your application includes `concurrently` and `json-server` in its `package.json` file, e.g.:
+
+```
+"dependencies": {
+    "concurrently": "^5.3.0",
+    "json-server": "^0.16.3",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "^4.0.0"
+  }
+```
+
 2. Alter your `scripts` block to include the following:
 
 ``` 
@@ -211,7 +222,7 @@ server.listen(port, () => {
 2. Place your `db.json` file under that directory.
 
 #### `/src/data.js`
-Create a `data.js` file under your application's source directory and configure it as follows:
+Create a `data.js` file under your application's `src` directory and configure it as follows:
 
 ```
 const baseUrl = process.env.NODE_ENV === 'production'
