@@ -4,10 +4,10 @@
 1. [Amazon Web Services](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#amazon-web-services-aws)
 2. [Why Deploy on AWS?](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#why-deploy-on-aws)
 3. [Getting Started](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#getting-started)
-4. [Deploying Your Applications with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-applications-with-aws-elastic-beanstalk)
-   * [React](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-with-aws-elastic-beanstalk)
-   * [React and Django]()
-6. [Deploying Your React Application on AWS Amplify](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-on-aws-amplify)
+4. [Prerequisites for Deploying Your Applications with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#prerequisites-for-deploying-your-applications-with-aws-elastic-beanstalk)
+5.  [React](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-with-aws-elastic-beanstalk)
+6. [React and Django]()
+7. [Deploying Your React Application on AWS Amplify](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-on-aws-amplify)
 
 ## Amazon Web Services (AWS)
 [AWS](https://aws.amazon.com), a subsidiary of Amazon, is the leading provider of 
@@ -114,7 +114,7 @@ register.
 
 ##### Congratulations! You are now ready to deploy your application with AWS.
 
-## Deploying Your Applications with AWS Elastic Beanstalk
+## Prerequisites for Deploying Your Applications with AWS Elastic Beanstalk
 
 ### AWS Elastic Beanstalk
 AWS developed Elastic Beanstalk to facilitate the deployment of web applications with 
@@ -129,7 +129,7 @@ working with the CLI to be more efficient. You can find installation instruction
 that the CLI requires Python 2.7, 3.4 or later. Since Python 2 has reached its 
 [end of life](https://www.python.org/doc/sunset-python-2/), you should be working in Python 3.
 
-### Deploying Your React Application with AWS Elastic Beanstalk
+## Deploying Your React Application with AWS Elastic Beanstalk
 
 ### AWS Elastic Beanstalk Tutorial
 Before working to deploy your application, it is worth completing a [tutorial](https://dev.to/johanrin/i-deployed-a-server-side-react-app-with-aws-elastic-beanstalk-here-s-what-i-learned-217i) to orient yourself 
