@@ -4,7 +4,7 @@
 1. [Amazon Web Services](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#amazon-web-services-aws)
 2. [Why Deploy on AWS?](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#why-deploy-on-aws)
 3. [Getting Started](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#getting-started)
-4. [AWS Elastic Beanstalk and the AWS Elastic Beanstalk CLI](https://github.com/nashville-software-school/aws-elastic-beanstalk-and-the-aws-elastic-beanstalk-cli)
+4. [AWS Elastic Beanstalk and the AWS Elastic Beanstalk CLI](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#aws-elastic-beanstalk-and-the-aws-elastic-beanstalk-cli)
 5. [Deploying Your React Application with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-with-aws-elastic-beanstalk)
 6. [Deploying Your React and Django Application with AWS Elastic Beanstalk]()
 7. [Deploying Your React Application on AWS Amplify](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-on-aws-amplify)
