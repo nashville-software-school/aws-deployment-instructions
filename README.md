@@ -6,7 +6,7 @@
 3. [Getting Started](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#getting-started)
 4. [AWS Elastic Beanstalk and the AWS Elastic Beanstalk CLI](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#aws-elastic-beanstalk-and-the-aws-elastic-beanstalk-cli)
 5. [Deploying Your React Application with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-with-aws-elastic-beanstalk)
-6. [Deploying Your React and Django Application with AWS Elastic Beanstalk]()
+6. [Deploying Your React and Django Applications with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-and-django-applications-with-aws-elastic-beanstalk)
 7. [Deploying Your React Application on AWS Amplify](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-on-aws-amplify)
 
 ## Amazon Web Services (AWS)
@@ -341,7 +341,7 @@ To review other facts about your environment, you can access the Elastic Beansta
 logs, go to the Elastic Beanstalk console. Select Environments on the left navigation menu. Select your environment. In the 
 navigation pane, choose **Request Logs**. When Elastic Beanstalk finishes processing the logs, choose **Download**.
 
-## Deploying Your Django and React Application on AWS Elastic Beanstalk
+## Deploying Your React and Django Applications with AWS Elastic Beanstalk
 
 ## Deploying Your React Application on AWS Amplify
 
