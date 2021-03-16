@@ -6,7 +6,7 @@
 3. [Getting Started](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#getting-started)
 4. [AWS Elastic Beanstalk and the AWS Elastic Beanstalk CLI](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#aws-elastic-beanstalk-and-the-aws-elastic-beanstalk-cli)
 5. [Deploying Your React Application with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-with-aws-elastic-beanstalk)
-6. [Deploying Your React and Django Applications with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-and-django-applications-with-aws-elastic-beanstalk)
+6. [Deploying Your Django Application with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-django-application-with-aws-elastic-beanstalk)
 7. [Deploying Your React Application on AWS Amplify](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-on-aws-amplify)
 
 ## Amazon Web Services (AWS)
@@ -272,8 +272,8 @@ From your application's home directory, run ```eb create```. This will generate 
 2. Enter a value for the prefix of your application's [DNS Canonical Name record](https://en.wikipedia.org/wiki/CNAME_record) or allow the default value.
 3. Select an **application** load balancer. AWS is in the process of deprecating Classic load balancers. Network load balancers cost money, and
 you do not need their low level configuration options to deploy your capstone.
-5. Choose **n** for [Spot Fleet requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html). Since
-you are deploying a light application on the free tier, you do not need to worry about this configuration option.
+5. Choose **n** for [Spot Fleet requests](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-fleet-requests.html). 
+Since you are deploying a light application on the free tier, you do not need to worry about this configuration option.
 
 From this point, the service will complete the following steps:
 1. Package and deploy your application to [S3](https://aws.amazon.com/s3/).
@@ -315,8 +315,8 @@ works before committing the changes to the `main` branch.
 **Congratulations! You have now deployed your React application with AWS Elastic Beanstalk.**
 
 ### Update Your Application Load Balancer's Security Group
-**IMPORTANT**: Without this step, your application's data will be exposed to the world. Take this step seriously, and complete it from your own 
-computer on your home router.
+**IMPORTANT**: Without this step, your application's data will be exposed to the world. Take this step seriously, and 
+complete it from your own computer on your home router.
 
 1. Log in to the [AWS Management Console](https://console.aws.amazon.com/).
 2. Go to the EC2 service. You can search for it in the search bar at the top or use the dropdown `Services` menu to 
@@ -326,22 +326,64 @@ locate it.
 ```
 Elastic Beanstalk created security group used when no ELB security groups are specified during ELB creation
 ```
-5. Click on its `Security group ID`.
-6. Select `Edit inbound rules`.
-7. Under `Source` close the box with the entry `0.0.0.0/0`.
-8. In the dropdown menu that has `Custom`, select `My IP`.
-9. Select `Save rules`.
+5. Click on its **Security group ID**.
+6. Select **Edit inbound rules**.
+7. Under **Source** close the box with the entry `0.0.0.0/0`.
+8. In the dropdown menu that has **Custom**, select `My IP`.
+9. Select **Save rules**.
 10. Your application is now restricted to your home network on the computer with which you changed the security group.
+It will accept no other traffic.
 
 ### Reviewing the Health, Status, and Configuration of Your Elastic Beanstalk Environment
 To check the health of your Elastic Beanstalk environment, you can run `eb status` from the command line.
 
-To review other facts about your environment, you can access the Elastic Beanstalk console via the **Search Bar** or 
-**Services** menu in the AWS Console. The logs functionality is especially helpful for debuggin. To access your environment 
-logs, go to the Elastic Beanstalk console. Select Environments on the left navigation menu. Select your environment. In the 
-navigation pane, choose **Request Logs**. When Elastic Beanstalk finishes processing the logs, choose **Download**.
+To review other facts about your Elastic Beanstalk application and environment, access the Elastic Beanstalk console via 
+the **Search Bar** or **Services** menu in the AWS Console. The logs functionality is especially helpful for debugging. To 
+access your application's logs, go to the Elastic Beanstalk console. Select **Environments** on the left navigation menu. 
+Select your environment. In the navigation pane, choose **Request Logs**. When Elastic Beanstalk finishes processing the 
+logs, choose **Download**.
 
-## Deploying Your React and Django Applications with AWS Elastic Beanstalk
+## Deploying Your Django Application with AWS Elastic Beanstalk
+
+Before trying to deploy your Django application with AWS Elastic Beanstalk, it is worth working through a [tutorial]
+(https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html). It should take no more than an 
+hour and will save you much time when working to deploy your own application.
+
+**Before proceeding, make sure your Django application runs without a hitch on your local machine. You do not want to 
+debug your application remotely.**
+
+### Configure Your Application for Elastic Beanstalk
+1. Activate your virtual environment.
+2. Run `pip freeze` and save the output to a `requirements.txt` file in your project's main directory.
+3. Create a directory named `.ebextensions`.
+4. In the `.ebextensions` directory, create a file named `django.config` and configure it as follows:
+```
+option_settings:
+  aws:elasticbeanstalk:container:python:
+    WSGIPath: <your_application_name>.wsgi:application
+```
+Note: Replace `<>your_application_name>` with the name of your application.
+5. Deactivate your virtual environment.
+
+### Initialize Elastic Beanstalk for Your Application
+1. Run the `eb init` command.
+2. Select **us-east-1**.
+3. Select **[ Create new Application ]**.
+4. Select the **default** name for the application.
+5. Select **Python**.
+6. Select the version of Python you used to develop your application.
+7. Select **n** to the CodeCommit prompt.
+8. Select **Y** to set up SSH.
+9. Select an existing keypair or **[ Create a new KeyPair ]**.
+
+### Create Your Elastic Beanstalk Django Application
+1. Run `eb create`.
+2. Choose the **default** environment name.
+3. Choose the **default** DNS CNAME prefix.
+4. Select the **application** load balancer.
+5. Select **N** when prompted about Spot Fleet requests.
+
+**Congratulations! Your Django application is now running in the cloud at the URL attached to your Elastic Beanstalk environment.**
 
 ## Deploying Your React Application on AWS Amplify
 
@@ -379,7 +421,7 @@ You can find a video guide for installing the CLI [here](https://www.youtube.com
 ### AWS Amplify Tutorial
 Before working to deploy your application, it is worth completing a [tutorial](https://docs.amplify.aws/start/q/integration/react) to 
 orient yourself to the Amplify tools and to make sure you have configured them correctly. It should take no more than an hour, which is 
-less time than it will take you to learn the service while fighting to deploy your application with 1misconfigurations.
+less time than it will take you to learn the service while fighting to deploy your application with misconfigurations.
 
 ### Configuring Your Web Application for Deployment on Amplify
 
