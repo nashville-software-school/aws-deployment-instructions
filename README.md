@@ -4,7 +4,7 @@
 1. [Amazon Web Services](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#amazon-web-services-aws)
 2. [Why Deploy on AWS?](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#why-deploy-on-aws)
 3. [Getting Started](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#getting-started)
-4. [Prerequisites for Deploying Your Applications with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#prerequisites-for-deploying-your-applications-with-aws-elastic-beanstalk)
+4. [AWS Elastic Beanstalk and the AWS Elastic Beanstalk CLI](https://github.com/nashville-software-school/aws-elastic-beanstalk-and-the-aws-elastic-beanstalk-cli)
 5. [Deploying Your React Application with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-with-aws-elastic-beanstalk)
 6. [Deploying Your React and Django Application with AWS Elastic Beanstalk]()
 7. [Deploying Your React Application on AWS Amplify](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-on-aws-amplify)
@@ -114,7 +114,7 @@ register.
 
 ##### Congratulations! You are now ready to deploy your application with AWS.
 
-## Prerequisites for Deploying Your Applications with AWS Elastic Beanstalk
+## AWS Elastic Beanstalk and the AWS Elastic Beanstalk CLI
 
 ### AWS Elastic Beanstalk
 AWS developed Elastic Beanstalk to facilitate the deployment of web applications with 
