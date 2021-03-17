@@ -432,6 +432,7 @@ Now that you have secured your server, you can attend to its visual representati
 This is because your Django application has not collected its static files and your Elastic Beanstalk application has not been configured to serve them.
 
 1. Add the following configuration to your `settings.py` file:
+
 ```
 import os
 
@@ -440,6 +441,7 @@ STATIC_ROOT = os.path.join(PROJECT_ROOT,'static/')
 STATIC_URL = '/static/'
 ```
 Your `settings.py` file may already have `STATIC_URL = '/static/'` by default.
+
 2. From your project's main local directory (i.e., not on the cloud server), run `python manage.py collectstatic`. Your application's static files have now been
 collected under the `static` directory under your project's root directory.
 3. Add the following configuration to your `django.config` file under the `.ebextensions` directory:
