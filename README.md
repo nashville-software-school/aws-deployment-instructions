@@ -404,6 +404,17 @@ From this point, the service will complete the following steps:
 
 **Congratulations! Your Django application is now running in the cloud at the URL attached to your Elastic Beanstalk environment.**
 
+At this point your browser will return the following error:
+```
+DisallowedHost at /
+
+Invalid HTTP_HOST header: '<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com'. You may need to add '<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com' to ALLOWED_HOSTS.
+```
+You will need to add `<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com` to `ALLOWED_HOSTS` in your `settings.py` file. Remember to replace `<DNS_CNAME_prefix>` 
+with your DNS CNAME prefix.
+
+Once you have made the appropriate change to your code, deploy your application again by running `eb deploy --staged`.
+
 ## Deploying Your React Application on AWS Amplify
 
 ### AWS Amplify
