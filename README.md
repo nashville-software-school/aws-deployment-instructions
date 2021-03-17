@@ -443,11 +443,13 @@ Your `settings.py` file may already have `STATIC_URL = '/static/'` by default.
 2. From your project's main local directory (i.e., not on the cloud server), run `python manage.py collectstatic`. Your application's static files have now been
 collected under the `static` directory under your project's root directory.
 3. Add the following configuration to your `django.config` file under the `.ebextensions` directory:
+
 ```
   aws:elasticbeanstalk:environment:proxy:staticfiles:
     /static: static
 ```
-Make sure the new `aws` line matches the indentation of the `aws` line above it.
+Make sure the indentation of the new `aws` line matches the indentation of the `aws` line above it. Standard is two spaces from the left side.
+
 4. Add and commit all your changes to GitHub.
 5. Deploy them to your Elastic Beanstalk environment with `eb deploy --staged`.
 6. Merge your changes to your `main` GitHub branch.
