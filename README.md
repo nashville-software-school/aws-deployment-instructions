@@ -388,6 +388,20 @@ to take this step seriously jeopardizes your application and your AWS account, w
 4. Select the **application** load balancer.
 5. Select **N** when prompted about Spot Fleet requests.
 
+From this point, the service will complete the following steps:
+1. Package and deploy your application to [S3](https://aws.amazon.com/s3/).
+2. Upload your [ssh keypair](https://www.ssh.com/ssh/public-key-authentication) to [EC2](https://aws.amazon.com/ec2/) if you attached one to the environment in the steps above.
+3. Create a [target group](https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-target-groups.html).
+4. Create [security groups](https://docs.aws.amazon.com/vpc/latest/userguide/VPC_SecurityGroups.html).
+5. Create an [auto-scaling](https://aws.amazon.com/autoscaling/) launch configuration and auto scaling group.
+6. Create an EC2 instance.
+7. Create auto scaling group policies for scaling your application's resources up and down.
+8. Create two [CloudWatch](https://aws.amazon.com/cloudwatch/) alarms to support auto scaling.
+9. Create an [application load balancer and load balancer listener](https://aws.amazon.com/elasticloadbalancing/).
+10. Deploy your application to your EC2 instance.
+11. Print the DNS CNAME of your Elastic Beanstalk environment, which will follow the pattern 
+<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com.
+
 **Congratulations! Your Django application is now running in the cloud at the URL attached to your Elastic Beanstalk environment.**
 
 ## Deploying Your React Application on AWS Amplify
