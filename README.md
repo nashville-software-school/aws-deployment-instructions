@@ -312,8 +312,6 @@ Elastic Beanstalk only updates from the `HEAD` commit of the `main` or `master` 
 flag pulls all the changes you have staged for pushing to your `main` branch. This way you can confirm that your application 
 works before committing the changes to the `main` branch.
 
-**Congratulations! You have now deployed your React application with AWS Elastic Beanstalk.**
-
 ### Update Your Application Load Balancer's Security Group
 **IMPORTANT**: Without this step, your application's data will be exposed to the world. Take this step seriously, and 
 complete it from your own computer on your home router.
@@ -333,6 +331,8 @@ Elastic Beanstalk created security group used when no ELB security groups are sp
 9. Select **Save rules**.
 10. Your application is now restricted to your home network on the computer with which you changed the security group.
 It will accept no other traffic.
+
+**Congratulations! You have now deployed your React application with AWS Elastic Beanstalk.**
 
 ### Reviewing the Health, Status, and Configuration of Your Elastic Beanstalk Environment
 To check the health of your Elastic Beanstalk environment, you can run `eb status` from the command line.
@@ -357,6 +357,7 @@ debug your application remotely.**
 2. Run `pip freeze` and save the output to a `requirements.txt` file in your project's main directory.
 3. Create a directory named `.ebextensions`.
 4. In the `.ebextensions` directory, create a file named `django.config` and configure it as follows:
+
 ```
 option_settings:
   aws:elasticbeanstalk:container:python:
@@ -402,8 +403,6 @@ From this point, the service will complete the following steps:
 11. Print the DNS CNAME of your Elastic Beanstalk environment, which will follow the pattern 
 <DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com.
 
-**Congratulations! Your Django application is now running in the cloud at the URL attached to your Elastic Beanstalk environment.**
-
 At this point your browser will return the following error:
 ```
 DisallowedHost at /
@@ -411,24 +410,26 @@ DisallowedHost at /
 Invalid HTTP_HOST header: '<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com'. You may need to add 
 '<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com' to ALLOWED_HOSTS.
 ```
-You will need to add `'<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com'` to `ALLOWED_HOSTS` in your `settings.py` file. Remember to replace `<DNS_CNAME_prefix>` 
-with your DNS CNAME prefix.
+As the error message recommends, you will need to add `'<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com'` to `ALLOWED_HOSTS` in your `settings.py` file. 
+Remember to replace `<DNS_CNAME_prefix>` with your DNS CNAME prefix.
 
-Once you have made the appropriate change to your code, deploy your application again by running `eb deploy --staged`.
+Once you have made the appropriate change to your code, add and commit your changes to GitHub, and deploy your application again by running `eb deploy --staged`.
 
 At this point, your application should be running in the cloud. 
 
 ### Secure Your Django Server in the Cloud
 
-**This is a good point to restrict http traffic to your application.** Follow the instructions 
+**This is a good point to restrict http traffic to your application. It is a requirement.** Follow the instructions 
 [here](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#update-your-application-load-balancers-security-group) to 
-limit traffic to your local machine. Failing to complete this step leaves all your data is exposed to all internet traffic, which is a **significant security 
-risk** to your server in the cloud.
+limit your application's http traffic to your local machine. Failing to complete this step leaves all your data is exposed to all internet traffic, which is a 
+**significant security risk** to your server in the cloud.
+
+**Congratulations! Your Django application is now running in the cloud at the URL attached to your Elastic Beanstalk environment.**
 
 ### Serve Your Django Application's Static Files to the Cloud
 
 Now that you have secured your server, you can attend to its visual representation. You will notice that your Admin and API pages lack the expected Django styling.
-This is because your Django application has not collected its static files and Elastic Beanstalk application has not been configured to serve them.
+This is because your Django application has not collected its static files and your Elastic Beanstalk application has not been configured to serve them.
 
 1. Add the following configuration to your `settings.py` file:
 ```
@@ -447,8 +448,9 @@ collected under the `static` directory under your project's root directory.
     /static: static
 ```
 Make sure the new `aws` line matches the indentation of the `aws` line above it.
-4. Deploy them to your Elastic Beanstalk environment with `eb deploy --staged`.
-5. Commit all your changes to GitHub.
+4. Add and commit all your changes to GitHub.
+5. Deploy them to your Elastic Beanstalk environment with `eb deploy --staged`.
+6. Merge your changes to your `main` GitHub branch.
 
 ## Deploying Your React Application on AWS Amplify
 
