@@ -485,7 +485,7 @@ not want to have to debug your application in the cloud.
    ```
    CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000',
-    'http://frontend-dev.us-east-1.elasticbeanstalk.com',
+    'http://<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com',
     )
     ```
    Add and commit your code to Github. Deploy your code to Elastic Beanstalk with `eb 
