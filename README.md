@@ -367,7 +367,8 @@ Note: Replace `<>your_application_name>` with the name of your application.
 5. Deactivate your virtual environment.
 6. Review the [Django deployment checklist](https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/) and make
 all necessary changes to your server code. This includes, but may not be limited to, removing the `SECRET_KEY` from your 
-`settings.py` file and setting `DEBUG` to `False`.
+`settings.py` file and setting `DEBUG` to `False`. **This is a requirement to protect your deployed application. Failing
+to take these steps seriously jeopardizes your application and your AWS account, which is tied to your finances.**
 
 ### Initialize Elastic Beanstalk for Your Application
 1. Run the `eb init` command.
