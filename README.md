@@ -7,7 +7,7 @@
 4. [AWS Elastic Beanstalk and the AWS Elastic Beanstalk CLI](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#aws-elastic-beanstalk-and-the-aws-elastic-beanstalk-cli)
 5. [Deploying Your React Application with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-with-aws-elastic-beanstalk)
 6. [Deploying Your Django Application with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-django-application-with-aws-elastic-beanstalk)
-7. [Deploying Your React Client and Django Server with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-client-and-django-server-with-aws-elastic-beanstalk)
+7. [Deploying Your React Client Frontend and Django Server Backend with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-client-frontend-and-django-server-backend-with-aws-elastic-beanstalk)
 
 ## Amazon Web Services (AWS)
 [AWS](https://aws.amazon.com), a subsidiary of Amazon, is the leading provider of 
@@ -456,7 +456,7 @@ Make sure the indentation of the new `aws` line matches the indentation of the `
 5. Deploy them to your Elastic Beanstalk environment with `eb deploy --staged`.
 6. Merge your changes to your `main` GitHub branch.
 
-## Deploying Your React Client and Django Server with AWS Elastic Beanstalk
+## Deploying Your React Client Frontend and Django Server Backend with AWS Elastic Beanstalk
 
 Before proceeding, please ensure that both your client and your server run locally. You do
 not want to have to debug your application in the cloud.
