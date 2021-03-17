@@ -416,8 +416,11 @@ with your DNS CNAME prefix.
 
 Once you have made the appropriate change to your code, deploy your application again by running `eb deploy --staged`.
 
-At this point, your application should be running in the cloud. This is a good point to restrict http traffic to your application to your local machine. Follow the 
-instructions [here]().
+At this point, your application should be running in the cloud. 
+
+**This is a good point to restrict http traffic to your application to your local machine.** Follow the instructions 
+[here](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#update-your-application-load-balancers-security-group).
+Otherwise, all your data is exposed to all internet traffic, which is a **significant security risk** to your server in the cloud.
 
 ## Deploying Your React Application on AWS Amplify
 
