@@ -478,9 +478,9 @@ not want to have to debug your application in the cloud.
    to remove your `localhost` `proxy` entry from your `package.json` file. Add and commit 
    your changes to GitHub. Deploy them with `eb deploy --staged`.
 5. At this point, you should see the homepage of your React application displayed from 
-   your remote client. Data, however, will be missing because your browser will have 
-   blocked requests due to a `Access-Control-Allow-Origin` header. To fix this, you 
-   will need to update your `CORS_ORIGIN_WHITELIST` in your Django applications' 
+   your remote client. Data from your backend server will be missing, however, because your 
+   browser will have blocked API requests due to a `Access-Control-Allow-Origin` header. 
+   To fix this, you will need to update your `CORS_ORIGIN_WHITELIST` in your Django application's 
    `settings.py` file. Add your Elastic Beanstalk environment's URL to the list as 
    follows:
    ```
@@ -492,5 +492,6 @@ not want to have to debug your application in the cloud.
    Add and commit your code to Github. Deploy your code to Elastic Beanstalk with `eb 
    deploy --staged`.
 6. Add, commit, and push your code to GitHub.
-   
-   
+
+**Congratulations! You have now deployed a full-stack application to the cloud with AWS
+Elastic Beanstalk.**
