@@ -322,7 +322,7 @@ complete it from your own computer on your home router.
 2. Go to the EC2 service. You can search for it in the search bar at the top or use the dropdown `Services` menu to 
 locate it.
 3. In the left navigation bar, select `Security Groups`.
-4. Find the Security Group with the name of your Elastic Beanstalk Application and the following description:
+4. Find the Security Group with the **Name** of your Elastic Beanstalk Application and the following **Description**:
 ```
 Elastic Beanstalk created security group used when no ELB security groups are specified during ELB creation
 ```
@@ -418,9 +418,29 @@ Once you have made the appropriate change to your code, deploy your application 
 
 At this point, your application should be running in the cloud. 
 
+### Secure Your Django Server in the Cloud
+
 **This is a good point to restrict http traffic to your application to your local machine.** Follow the instructions 
 [here](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#update-your-application-load-balancers-security-group).
-Otherwise, all your data is exposed to all internet traffic, which is a **significant security risk** to your server in the cloud.
+Otherwise, all your data is exposed to all internet traffic, which is a **significant security risk** to your server in the cloud. You will adjust this security
+group below to give ingress permission to your client.
+
+### Serve Your Django Application's Static Files to the Cloud
+
+Now that you have secured your server, you can attend to its visual representation. You will notice that your Admin and API pages lack the expected Django styling.
+This is because your Django application has not collected its static files and Elastic Beanstalk application has not been configured to serve them.
+
+1. Add the following configuration to your `settings.py` file:
+```
+import os
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__name__))
+STATIC_ROOT = os.path.join(PROJECT_ROOT,'static/')
+STATIC_URL = '/static/'
+```
+2. From your project's main local directory (i.e., not on the cloud server), run `python manage.py collectstatic`. Your application's static files have now been
+collected under the `static` directory under your project's root directory.
+3. Deploy them to your Elastic Beanstalk environment with `eb deploy --staged`.
 
 ## Deploying Your React Application on AWS Amplify
 
