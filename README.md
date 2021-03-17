@@ -492,5 +492,10 @@ not want to have to debug your application in the cloud.
    deploy --staged`.
 6. Add, commit, and push your code to GitHub.
 
+There are at least two caveats of which you should be aware:
+1. This setup only allows for HTTP traffic. HTTP is an unsecured protocol.
+2. This setup routes your client and server traffic publicly. Limiting server traffic will require additional modifications to use an internal load balancer.
+**Without further work to configure HTTPS and an internal load balancer, you should restrict server traffic to your home network as noted above.**
+
 **Congratulations! You have now deployed a full-stack application to the cloud with AWS
 Elastic Beanstalk.**
