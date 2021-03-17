@@ -408,12 +408,16 @@ At this point your browser will return the following error:
 ```
 DisallowedHost at /
 
-Invalid HTTP_HOST header: '<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com'. You may need to add '<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com' to ALLOWED_HOSTS.
+Invalid HTTP_HOST header: '<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com'. You may need to add '<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com' 
+to ALLOWED_HOSTS.
 ```
-You will need to add `<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com` to `ALLOWED_HOSTS` in your `settings.py` file. Remember to replace `<DNS_CNAME_prefix>` 
+You will need to add `'<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com'` to `ALLOWED_HOSTS` in your `settings.py` file. Remember to replace `<DNS_CNAME_prefix>` 
 with your DNS CNAME prefix.
 
 Once you have made the appropriate change to your code, deploy your application again by running `eb deploy --staged`.
+
+At this point, your application should be running in the cloud. This is a good point to restrict http traffic to your application to your local machine. Follow the 
+instructions [here]().
 
 ## Deploying Your React Application on AWS Amplify
 
