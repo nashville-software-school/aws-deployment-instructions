@@ -7,6 +7,7 @@
 4. [AWS Elastic Beanstalk and the AWS Elastic Beanstalk CLI](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#aws-elastic-beanstalk-and-the-aws-elastic-beanstalk-cli)
 5. [Deploying Your React Application with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-with-aws-elastic-beanstalk)
 6. [Deploying Your Django Application with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-django-application-with-aws-elastic-beanstalk)
+7. [Deploying Your React Client and Django Server with AWS Elastic Beanstalk](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-client-and-django-server-with-aws-elastic-beanstalk)
 
 ## Amazon Web Services (AWS)
 [AWS](https://aws.amazon.com), a subsidiary of Amazon, is the leading provider of 
@@ -454,3 +455,42 @@ Make sure the indentation of the new `aws` line matches the indentation of the `
 4. Add and commit all your changes to GitHub.
 5. Deploy them to your Elastic Beanstalk environment with `eb deploy --staged`.
 6. Merge your changes to your `main` GitHub branch.
+
+## Deploying Your React Client and Django Server with AWS Elastic Beanstalk
+
+Before proceeding, please ensure that both your client and your server run locally. You do
+not want to have to debug your application in the cloud.
+
+1. Deploy your Django application following the instructions [above](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-django-application-with-aws-elastic-beanstalk).
+2. To test your remote server, change all API calls in your React code from 
+   http://localhost:3000 to your Django application's Elastic Beanstalk URL, which will 
+   mirror the following: http://<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com. At 
+   this point, your local React client should be connecting to your remote Django server. 
+   Make sure you are working from the computer and router whose IP address is allowed 
+   ingress to your Django server. Otherwise, your local client will not be allowed to 
+   communicate with your remote server.
+3. Once your local React client is communicating as expected with your remote Django 
+   server, you are ready to deploy your client remotely. Follow the instructions [here](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#initializing-elastic-beanstalk).
+   At this point, your React app should return an error: `Invalid Host header`.
+4. Create or modify a `.env` file under your application's `src` directory and add the following:
+   `HOST='http://<DNS_CNAME_prefix>.us-east-1.elasticbeanstalk.com'`. Remember to 
+   replace `<DNS_CNAME_prefix>` with your application's DNS CNAME. You will also need 
+   to remove your `localhost` `proxy` entry from your `package.json` file. Add and commit 
+   your changes to GitHub. Deploy them with `eb deploy --staged`.
+5. At this point, you should see the homepage of your React application displayed from 
+   your remote client. Data, however, will be missing because your browser will have 
+   blocked requests due to a `Access-Control-Allow-Origin` header. To fix this, you 
+   will need to update your `CORS_ORIGIN_WHITELIST` in your Django applications' 
+   `settings.py` file. Add your Elastic Beanstalk environment's URL to the list as 
+   follows:
+   ```
+   CORS_ORIGIN_WHITELIST = (
+    'http://localhost:3000',
+    'http://frontend-dev.us-east-1.elasticbeanstalk.com',
+    )
+    ```
+   Add and commit your code to Github. Deploy your code to Elastic Beanstalk with `eb 
+   deploy --staged`.
+6. Add, commit, and push your code to GitHub.
+   
+   
