@@ -440,7 +440,13 @@ STATIC_URL = '/static/'
 ```
 2. From your project's main local directory (i.e., not on the cloud server), run `python manage.py collectstatic`. Your application's static files have now been
 collected under the `static` directory under your project's root directory.
-3. Deploy them to your Elastic Beanstalk environment with `eb deploy --staged`.
+3. Add the following configuration to your `django.config` file under the `.ebextensions` directory:
+```
+  aws:elasticbeanstalk:environment:proxy:staticfiles:
+    /static: static
+```
+Make sure the new `aws` line matches the indentation of the `aws` line above it.
+4. Deploy them to your Elastic Beanstalk environment with `eb deploy --staged`.
 
 ## Deploying Your React Application on AWS Amplify
 
