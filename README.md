@@ -239,7 +239,7 @@ const data = {
 export default data;
 ```
 
-**Congratulations! You application is now configured for development and production deployment.**
+**Congratulations! You application is now configured for development and deployment.**
 
 ### Initializing Elastic Beanstalk
 From your application's home directory, run ```eb init```. This sets default values for Elastic Beanstalk 
@@ -329,8 +329,7 @@ Elastic Beanstalk created security group used when no ELB security groups are sp
 7. Under **Source** close the box with the entry `0.0.0.0/0`.
 8. In the dropdown menu that has **Custom**, select `My IP`.
 9. Select **Save rules**.
-10. Your application is now restricted to your home network on the computer with which you changed the security group.
-It will accept no other traffic.
+10. Your application is now restricted to your home network. It will accept traffic from no other source.
 
 **Congratulations! You have now deployed your React application with AWS Elastic Beanstalk.**
 
@@ -421,7 +420,7 @@ At this point, your application should be running in the cloud.
 
 **This is a good point to restrict http traffic to your application. It is a requirement.** Follow the instructions 
 [here](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#update-your-application-load-balancers-security-group) to 
-limit your application's http traffic to your local machine. Failing to complete this step leaves your data exposed to all internet traffic, which is a 
+limit your application's http traffic to your local network. Failing to complete this step leaves your data exposed to all internet traffic, which is a 
 **significant security risk** to your server in the cloud. This is also a risk to your AWS account, which is tied to your finances.
 
 **Congratulations! Your Django application is now running in the cloud.**
