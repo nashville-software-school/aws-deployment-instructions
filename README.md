@@ -420,10 +420,10 @@ At this point, your application should be running in the cloud.
 
 ### Secure Your Django Server in the Cloud
 
-**This is a good point to restrict http traffic to your application to your local machine.** Follow the instructions 
-[here](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#update-your-application-load-balancers-security-group).
-Otherwise, all your data is exposed to all internet traffic, which is a **significant security risk** to your server in the cloud. You will adjust this security
-group below to give ingress permission to your client.
+**This is a good point to restrict http traffic to your application.** Follow the instructions 
+[here](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#update-your-application-load-balancers-security-group) to 
+limit traffic to your local machine. Failing to complete this step leaves all your data is exposed to all internet traffic, which is a **significant security 
+risk** to your server in the cloud.
 
 ### Serve Your Django Application's Static Files to the Cloud
 
@@ -438,6 +438,7 @@ PROJECT_ROOT = os.path.abspath(os.path.dirname(__name__))
 STATIC_ROOT = os.path.join(PROJECT_ROOT,'static/')
 STATIC_URL = '/static/'
 ```
+Your `settings.py` file may already have `STATIC_URL = '/static/'` by default.
 2. From your project's main local directory (i.e., not on the cloud server), run `python manage.py collectstatic`. Your application's static files have now been
 collected under the `static` directory under your project's root directory.
 3. Add the following configuration to your `django.config` file under the `.ebextensions` directory:
@@ -447,6 +448,7 @@ collected under the `static` directory under your project's root directory.
 ```
 Make sure the new `aws` line matches the indentation of the `aws` line above it.
 4. Deploy them to your Elastic Beanstalk environment with `eb deploy --staged`.
+5. Commit all your changes to GitHub.
 
 ## Deploying Your React Application on AWS Amplify
 
