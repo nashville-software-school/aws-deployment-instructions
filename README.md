@@ -25,7 +25,7 @@ for the deployment, monitoring, and maintenance of their software stack in the c
 ## Getting Started
 
 ### AWS Account
-Working with AWS requires an AWS account. Fortunately, as of March 2021 Amazon still offers 
+Working with AWS requires an active AWS account. Fortunately, as of March 2021 Amazon still offers 
 an extended free-tier account that gives free access for one year to all the services you 
 will need to deploy your application. Even still, note that setting up an AWS account requires 
 an active credit or debit card, which will be billed if your usage exceeds the free tier limit. 
@@ -421,10 +421,10 @@ At this point, your application should be running in the cloud.
 
 **This is a good point to restrict http traffic to your application. It is a requirement.** Follow the instructions 
 [here](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#update-your-application-load-balancers-security-group) to 
-limit your application's http traffic to your local machine. Failing to complete this step leaves all your data is exposed to all internet traffic, which is a 
-**significant security risk** to your server in the cloud.
+limit your application's http traffic to your local machine. Failing to complete this step leaves your data exposed to all internet traffic, which is a 
+**significant security risk** to your server in the cloud. This is also a risk to your AWS account, which is tied to your finances.
 
-**Congratulations! Your Django application is now running in the cloud at the URL attached to your Elastic Beanstalk environment.**
+**Congratulations! Your Django application is now running in the cloud.**
 
 ### Serve Your Django Application's Static Files to the Cloud
 
