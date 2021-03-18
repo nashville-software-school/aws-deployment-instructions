@@ -22,6 +22,14 @@ Your ability to display your capstones running on AWS servers will signal to emp
 ability to work in a modern software development team, many of which are now responsible 
 for the deployment, monitoring, and maintenance of their software stack in the cloud.
 
+## Caveat Architectus - Engineer Beware
+These instructions are designed to introduce you to working with cloud computing resources.
+Do not use this guide to try to deploy your capstone professionally. There are other steps 
+you must take to secure your application in production: https and an internal load balancer, 
+for instance. They are not included here because they can unnecessarily complicate a basic 
+introduction, which is most important for you at this stage. Follow the steps below to acclimate 
+yourself to AWS and to motivate yourself to take the steps to secure your application fully.
+
 ## Getting Started
 
 ### AWS Account
