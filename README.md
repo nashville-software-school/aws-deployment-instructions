@@ -114,8 +114,9 @@ register.
     **Fixed**. Enter $0.01 as the **Budgeted Amount**.
 13. Choose **Configure thresholds**.
 14. Set threshold based on **Actual cost**.
-15. Set up notifications by entering an email address in the **Email recipients** box. 
-16. Choose **Confirm budget**.
+15. Set the **Alert threshold** to 100%. Note that you may want a different threshold if your budget is greater than $0.01.
+16. Set up notifications by entering an email address in the **Email recipients** box. 
+17. Choose **Confirm budget**.
 
 #### IAM Multi-factor Authentication
 1. [Set up multi-factor authentication for your IAM user.](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_mfa_enable_virtual.html)
