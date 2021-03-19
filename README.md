@@ -358,6 +358,8 @@ access your application's logs, go to the Elastic Beanstalk console. Select **En
 Select your environment. In the navigation pane, choose **Request Logs**. When Elastic Beanstalk finishes processing the 
 logs, choose **Download**.
 
+You can terminate your Elastic Beanstalk environment with `eb terminate`. This will tear down all the AWS resources you have deployed.
+
 ## Deploying Your Django Application with AWS Elastic Beanstalk
 
 Before trying to deploy your Django application with AWS Elastic Beanstalk, it is worth working through a 
@@ -515,4 +517,4 @@ There are at least two caveats of which you should be aware:
 **Without further work to configure HTTPS and an internal load balancer, you should restrict server traffic to your home network as noted above.**
 
 **Congratulations! You have now deployed a full-stack application to the cloud with AWS
-Elastic Beanstalk.**
+Elastic Beanstalk. Remember to terminate it when you are finished with the resources: `eb terminate`.**
