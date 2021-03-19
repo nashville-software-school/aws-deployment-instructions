@@ -94,8 +94,8 @@ register.
 16. If all looks as you expect, choose **Create User**.
 
 #### Setting Up a Budget
-1. Choose **My Account** from the account dropdown menu in the top right corner of the 
-   screen.
+1. While logged in to the AWS console as the root user, choose **My Account** from the account 
+   dropdown menu in the top right corner of the screen.
 2. Scroll down to **IAM User and Role Access to Billing Information** and select **edit**.
 3. Select **Activate IAM Access** and **Update**.
 4. Document all credentials securely: root user email address; root user password; IAM 
