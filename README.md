@@ -256,19 +256,24 @@ export default data;
 From your application's home directory, run ```eb init```. This sets default values for Elastic Beanstalk 
 applications. It will ask a series of questions:
 
-1. Select **us-east-1** as your region. The reason for this is two-fold. First, it is best practice
+1. If you have not set up your Elastic Beanstalk CLI with your AWS credentials, the prompts will ask you 
+for your AWS IAM user's key and secret key. You will be able to find these credentials in the AWS console 
+under IAM --> Users --> <your_user> --> Security credentials. If you are unable to access your credentials
+or failed to store them when you accessed them initially, you can create new credentials. **Document 
+them securely.**
+2. Select **us-east-1** as your region. The reason for this is two-fold. First, it is best practice
 to deploy your application closest to its user base. Amazon's us-east-1 region is based in 
 northern Virginia. The proximity argument may lead to your wanting to select us-east-2, which is 
 in Ohio. Nonetheless, you should still choose us-east-1 because this is the region in which
 AWS often deploys its newest services first. The benefit of having access to the newest services
 far outweighs the cost of a few hundred miles.
-2. Choose **[ Create new Application ]**. It will default to the the name of your application's main folder.
-3. Allow the default value for `Application Name`.
-4. The prompt will ask you whether you are using Node.js. Enter **Y**.
-5. Choose the version of Node you used locally to develop your project.
-6. Select **n** for [CodeCommit](https://aws.amazon.com/codecommit/). You do not need an AWS-managed service for 
+3. Choose **[ Create new Application ]**. It will default to the the name of your application's main folder.
+4. Allow the default value for `Application Name`.
+5. The prompt will ask you whether you are using Node.js. Enter **Y**.
+6. Choose the version of Node you used locally to develop your project.
+7. Select **n** for [CodeCommit](https://aws.amazon.com/codecommit/). You do not need an AWS-managed service for 
 source control.
-7. Set up SSH access for your EC2 instances if you would like:
+8. Set up SSH access for your EC2 instances if you would like:
    * Select a keypair.
    * Name the keypair.
    * Enter a passphrase.
