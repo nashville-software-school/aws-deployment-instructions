@@ -518,3 +518,47 @@ There are at least two caveats of which you should be aware:
 
 **Congratulations! You have now deployed a full-stack application to the cloud with AWS
 Elastic Beanstalk. Remember to terminate it when you are finished with the resources: `eb terminate`.**
+
+## Deploying Your React Application on AWS Amplify
+
+### AWS Amplify
+AWS Amplify is a managed service that makes it easy to launch applications in AWS. It has 
+code libraries, components, and a dedicated CLI that you can use to build a backend. The 
+components include data storage, analytics, push notifications, and authentication. Amplify 
+supports iOS, Android, Web and React Native mobile applications in addition to React, Ionic, 
+and vue.js web applications.
+
+### Installing and Configuring the Amplify CLI
+
+##### Install the CLI Globally
+
+```npm install -g @aws-amplify/cli```
+
+Depending on your system policies, this command may require `sudo` access.
+
+
+
+7. [Deploying Your React Application on AWS Amplify](https://github.com/nashville-software-school/aws-deployment-instructions/blob/main/README.md#deploying-your-react-application-on-aws-amplify)
+
+##### Configure the CLI
+
+```amplify configure```
+
+1. Select `us-east-1` as your region. 
+
+2. After selecting the region, the prompt will ask you for a user name for a new IAM user. You can 
+sign in to the AWS Console in order to create a new IAM user, or you can use the existing 
+administrative user you created above. Either way, you will need the user's `accessKeyId` and 
+`secretAccessKey` to connect the CLI. If you no longer have access to those credentials, 
+you can [create new keys](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_access-keys.html).
+Note that AWS tools store your credentials on your local machine under the `~/.aws` directory. 
+You should be able to find them there. As always, if you create new keys, **store them securely**.
+
+You can find a video guide for installing the CLI [here](https://www.youtube.com/watch?v=fWbM5DLh25U&t=1s).
+
+### AWS Amplify Tutorial
+Before working to deploy your application, it is worth completing a [tutorial](https://docs.amplify.aws/start/q/integration/react) to 
+orient yourself to the Amplify tools and to make sure you have configured them correctly. It should take no more than an hour, which is 
+less time than it will take you to learn the service while fighting to deploy your application with misconfigurations.
+
+### Configuring Your Web Application for Deployment on Amplify
