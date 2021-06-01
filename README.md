@@ -362,6 +362,8 @@ You can terminate your Elastic Beanstalk environment with `eb terminate`. This w
 
 ## Deploying Your Django Application with AWS Elastic Beanstalk
 
+IMPORTANT NOTE: If you are deploying a web application with a SQLite database, you will need to make several configuration changes that are not captured in these instruction. They are forthcoming.
+
 Before trying to deploy your Django application with AWS Elastic Beanstalk, it is worth working through a 
 [tutorial](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/create-deploy-python-django.html). 
 It should take no more than an hour and will save you much time when working to deploy your own application.
